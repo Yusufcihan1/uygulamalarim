@@ -7,7 +7,10 @@
         "date":  "2026-11-06",
         "description":  "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM\u0027i temizler, işlemciyi rahatlatır.",
         "features":  [
-                         "Arka plan uygulamalarını tek tıkla kapatır,RAM ve Windows önbelleğini temizler,Nihai performans güç planına geçer,Sistem süreçlerine ve açık işlerine dokunmaz"
+                         "Arka plan uygulamalarını tek tıkla kapatır",
+                         "RAM ve Windows önbelleğini temizler",
+                         "Nihai performans güç planına geçer",
+                         "Sistem süreçlerine ve açık işlerine dokunmaz"
                      ],
         "icon":  "icons/pc-turbo.png",
         "size":  14706501,

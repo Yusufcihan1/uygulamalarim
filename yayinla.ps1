@@ -3,7 +3,8 @@ Uygulamalarım sitesine bir uygulama ekler ya da yeni sürümünü yayınlar.
 
   .\yayinla.ps1 -Id pc-turbo -Ad "PC Turbo" -Surum 1.0.1 -Dosya "C:\...\PC Turbo Kurulum.exe"
 
-İlk yayında -Aciklama, -Ozellikler ve -Ikon da ver; sonraki sürümlerde verilmeyenler önceki kayıttan alınır.
+İlk yayında -Aciklama, -Ozellikler ("birinci; ikinci; üçüncü") ve -Ikon (PNG) da ver; sonraki sürümlerde
+verilmeyenler önceki kayıttan alınır.
 Dosya GitHub Releases'e yüklenir (dosya başına 2 GB'a kadar), apps.json güncellenir ve site yayınlanır.
 #>
 param(
@@ -34,7 +35,8 @@ if (Test-Path apps.json) {
 }
 $old = $apps | Where-Object { $_.id -eq $Id } | Select-Object -First 1
 if (-not $Aciklama) { $Aciklama = $old.description }
-if (-not $Ozellikler) { $Ozellikler = @($old.features) }
+if ($Ozellikler) { $Ozellikler = @($Ozellikler | ForEach-Object { $_ -split ';' } | ForEach-Object { $_.Trim() }) }
+else { $Ozellikler = @($old.features) }
 if (-not $Aciklama) { throw "İlk yayında -Aciklama gerekli" }
 
 if ($Ikon) {
