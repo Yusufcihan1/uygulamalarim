@@ -18,5 +18,20 @@
     "sha256": "31c9c630f47e9d9fa3045381c675fe6344552ec840d00389ec5c3c4357ec0cdb",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.0/PC-Turbo-1.0.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
+  },
+  {
+    "id": "silme-testi",
+    "name": "Silme Testi",
+    "version": "1.0.0",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Silme testi",
+    "features": [],
+    "icon": "icons/silme-testi.png",
+    "size": 65536,
+    "sha256": "f51fab8041e5023d7290b540a2106f051ef0bd2bc3443c9daf318628b560fa29",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/silme-testi-v1.0.0/Silme-Testi-1.0.0.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=silme-testi"
   }
 ]
