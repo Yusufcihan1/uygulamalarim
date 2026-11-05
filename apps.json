@@ -18,25 +18,5 @@
     "sha256": "31c9c630f47e9d9fa3045381c675fe6344552ec840d00389ec5c3c4357ec0cdb",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.0/PC-Turbo-1.0.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
-  },
-  {
-    "id": "cerezcord",
-    "name": "Cerezcord",
-    "version": "1.0.0",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-06",
-    "description": "P2P Şifreli ve Lokal Sesli Sohbet",
-    "features": [
-      "Açık (Public Odalar)",
-      "Şifreli Odalar",
-      "Görüntülü görüşme",
-      "Dosya paylaşımı"
-    ],
-    "icon": "icons/cerezcord.png",
-    "size": 121916104,
-    "sha256": "56548f762f27cc2afbe0515c742047d7e02924e8ffdec9b0f0b7e834256c60c8",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/cerezcord-v1.0.0/Cerezcord-1.0.0.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
   }
 ]
