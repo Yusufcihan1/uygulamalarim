@@ -44,6 +44,9 @@ if ($Ikon) {
 if (-not (Test-Path "icons\$Id.png")) { throw "İkon yok: -Ikon ile bir PNG ver" }
 
 Write-Host "Release yükleniyor: $tag / $assetName"
+# PowerShell 5.1 "Stop" kipinde gh/git'in stderr'e yazdığı ilerleme satırlarını da hata sayar; buradan sonra
+# yerel komutların sonucu çıkış koduyla denetlenir.
+$ErrorActionPreference = "Continue"
 gh release view $tag --repo $repo *> $null
 if ($LASTEXITCODE -eq 0) {
     gh release upload $tag $tmp --repo $repo --clobber
@@ -72,6 +75,7 @@ $json = ConvertTo-Json -InputObject @($apps) -Depth 5
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot "apps.json"), $json, (New-Object Text.UTF8Encoding $false))
 
 git add -A
-git commit -m "$Ad $Surum yayınlandı"
-git push
+git commit -q -m "$Ad $Surum yayınlandı"
+git push -q
+if ($LASTEXITCODE) { throw "git push başarısız" }
 Write-Host "Yayında: https://yusufcihan1.github.io/uygulamalarim/ (Pages güncellemesi ~1 dk sürer)"

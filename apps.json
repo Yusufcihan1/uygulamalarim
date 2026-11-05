@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "id":  "pc-turbo",
+        "name":  "PC Turbo",
+        "version":  "1.0.0",
+        "platform":  "Windows",
+        "date":  "2026-11-06",
+        "description":  "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM\u0027i temizler, işlemciyi rahatlatır.",
+        "features":  [
+                         "Arka plan uygulamalarını tek tıkla kapatır,RAM ve Windows önbelleğini temizler,Nihai performans güç planına geçer,Sistem süreçlerine ve açık işlerine dokunmaz"
+                     ],
+        "icon":  "icons/pc-turbo.png",
+        "size":  14706501,
+        "sha256":  "31c9c630f47e9d9fa3045381c675fe6344552ec840d00389ec5c3c4357ec0cdb",
+        "download":  "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.0/PC-Turbo-1.0.0.exe",
+        "release":  "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
+    }
+]
