@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uygulamalarım</title>
+<meta name="description" content="Yusuf Cihan'ın Windows uygulamaları: indir, kur, kullan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cg fill='%23fff'%3E%3Crect x='7' y='7' width='8' height='8' rx='2'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' opacity='.6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --surface-2: #eef0f7;
+    --border: #e2e5ef;
+    --text: #151724;
+    --muted: #5d6279;
+    --accent: #6a4cf5;
+    --accent-2: #0ea5c6;
+    --accent-ink: #ffffff;
+    --shadow: 0 1px 2px rgba(20, 22, 40, .04), 0 8px 24px rgba(20, 22, 40, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1016;
+      --surface: #181a25;
+      --surface-2: #212434;
+      --border: #2a2e42;
+      --text: #e9ebf5;
+      --muted: #8b90a8;
+      --accent: #8b6dff;
+      --accent-2: #22d3ee;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1016;
+    --surface: #181a25;
+    --surface-2: #212434;
+    --border: #2a2e42;
+    --text: #e9ebf5;
+    --muted: #8b90a8;
+    --accent: #8b6dff;
+    --accent-2: #22d3ee;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 32px rgba(0, 0, 0, .25);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 15px/1.55 Inter, "Segoe UI", system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 56px 0 28px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo {
+    width: 48px; height: 48px; border-radius: 14px; flex: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 11px;
+  }
+  .logo i { background: #fff; border-radius: 3px; }
+  .logo i:last-child { opacity: .6; }
+  h1 { margin: 0; font-size: clamp(28px, 5vw, 38px); font-weight: 800; letter-spacing: -.02em; }
+  .lead { margin: 10px 0 0; color: var(--muted); max-width: 620px; }
+
+  .toolbar { display: flex; gap: 12px; align-items: center; margin: 28px 0 22px; flex-wrap: wrap; }
+  .search {
+    flex: 1 1 260px; display: flex; align-items: center; gap: 10px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0 14px;
+  }
+  .search svg { flex: none; color: var(--muted); }
+  .search input {
+    width: 100%; border: 0; outline: 0; background: transparent; color: var(--text);
+    font: inherit; padding: 12px 0;
+  }
+  .search:focus-within { border-color: var(--accent); }
+  .count { color: var(--muted); font-size: 14px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 22px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .card-head { display: flex; gap: 14px; align-items: center; }
+  .card-head img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
+  .card h2 { margin: 0; font-size: 19px; font-weight: 700; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .tag {
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    background: var(--surface-2); border-radius: 999px; padding: 2px 9px;
+  }
+  .tag.version { color: var(--accent); }
+  .desc { margin: 0; color: var(--muted); }
+  .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; }
+  .features li { display: flex; gap: 8px; }
+  .features li::before { content: "✓"; color: var(--accent-2); font-weight: 700; }
+  .actions { display: flex; gap: 10px; align-items: center; margin-top: auto; padding-top: 6px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600;
+    border-radius: 12px; padding: 11px 18px; font-size: 15px;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-ghost { color: var(--muted); padding: 11px 8px; font-size: 14px; }
+  .btn-ghost:hover { color: var(--text); }
+  .size { color: var(--muted); font-size: 13px; }
+
+  .empty, .error { color: var(--muted); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
+
+  .note {
+    margin: 36px 0 0; background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    padding: 20px 22px; color: var(--muted); font-size: 14px;
+  }
+  .note strong { color: var(--text); }
+  footer { color: var(--muted); font-size: 13px; padding: 32px 0 48px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <h1>Uygulamalarım</h1>
+    </div>
+    <p class="lead">Kendi yaptığım Windows uygulamaları. Kurulum dosyasını indir, çalıştır, kullan.</p>
+  </header>
+
+  <div class="toolbar">
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Uygulama ara" autocomplete="off" aria-label="Uygulama ara">
+    </label>
+    <span class="count" id="count"></span>
+  </div>
+
+  <main class="grid" id="grid"><p class="empty">Yükleniyor…</p></main>
+
+  <div class="note">
+    <strong>Windows "bilgisayarınız korundu" derse:</strong> Uygulamalar dijital imzasız olduğu için SmartScreen
+    uyarı verebilir. <em>Ek bilgi</em> → <em>Yine de çalıştır</em> ile devam edebilirsin.
+  </div>
+
+  <footer>Yusuf Cihan · Dosyalar GitHub Releases üzerinden indirilir.</footer>
+</div>
+
+<script>
+  const grid = document.getElementById("grid");
+  const count = document.getElementById("count");
+  const q = document.getElementById("q");
+  let apps = [];
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmtSize = (b) => b >= 1 << 30 ? (b / (1 << 30)).toFixed(1) + " GB" : (b / (1 << 20)).toFixed(1) + " MB";
+  const fmtDate = (d) => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+
+  function card(a) {
+    const feats = (a.features || []).map((f) => `<li>${esc(f)}</li>`).join("");
+    return `<article class="card">
+      <div class="card-head">
+        <img src="${esc(a.icon)}" alt="" width="56" height="56">
+        <div>
+          <h2>${esc(a.name)}</h2>
+          <div class="meta">
+            <span class="tag version">v${esc(a.version)}</span>
+            <span class="tag">${esc(a.platform || "Windows")}</span>
+            <span class="tag">${fmtDate(a.date)}</span>
+          </div>
+        </div>
+      </div>
+      <p class="desc">${esc(a.description)}</p>
+      ${feats ? `<ul class="features">${feats}</ul>` : ""}
+      <div class="actions">
+        <a class="btn btn-primary" href="${esc(a.download)}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+          İndir
+        </a>
+        <span class="size">${a.size ? fmtSize(a.size) : ""}</span>
+        ${a.release ? `<a class="btn btn-ghost" href="${esc(a.release)}">Tüm sürümler</a>` : ""}
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const term = q.value.trim().toLocaleLowerCase("tr");
+    const list = apps.filter((a) =>
+      !term || [a.name, a.description, ...(a.features || [])].join(" ").toLocaleLowerCase("tr").includes(term));
+    grid.innerHTML = list.length ? list.map(card).join("") : `<p class="empty">Eşleşen uygulama yok.</p>`;
+    count.textContent = `${list.length} uygulama`;
+  }
+
+  fetch("apps.json", { cache: "no-store" })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((data) => {
+      apps = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      render();
+    })
+    .catch(() => { grid.innerHTML = `<p class="error">Uygulama listesi yüklenemedi.</p>`; });
+  q.addEventListener("input", render);
+</script>
+</body>
+</html>
