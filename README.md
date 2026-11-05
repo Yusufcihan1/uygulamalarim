@@ -2,4 +2,6 @@
 
 Kendi Windows uygulamalarım: https://yusufcihan1.github.io/uygulamalarim/
 
-Yeni uygulama ya da sürüm yayınlamak için `yayinla.ps1` (kurulum dosyaları GitHub Releases'e yüklenir, liste `apps.json`'dadır).
+Yayınlamak için masaüstündeki **Uygulama Yükle** uygulamasını aç: klasörü sürükle ya da masaüstünde bulunanlardan seç. Kurulum dosyası, taşınabilir klasör (zip'lenir) ya da tek exe kendiliğinden bulunur; dosya GitHub Releases'e yüklenir, liste `apps.json`'da tutulur.
+
+Kaynak: `yukleyici/` (`build.ps1` ile derlenir).

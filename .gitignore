@@ -1,0 +1,5 @@
+/yukleyici/.venv/
+/yukleyici/build/
+/yukleyici/dist/
+*.spec
+__pycache__/

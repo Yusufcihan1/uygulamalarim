@@ -113,6 +113,7 @@
   .btn-ghost { color: var(--muted); padding: 11px 8px; font-size: 14px; }
   .btn-ghost:hover { color: var(--text); }
   .size { color: var(--muted); font-size: 13px; }
+  .hint { margin: 0; color: var(--muted); font-size: 13px; }
 
   .empty, .error { color: var(--muted); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
 
@@ -164,8 +165,16 @@
   const fmtSize = (b) => b >= 1 << 30 ? (b / (1 << 30)).toFixed(1) + " GB" : (b / (1 << 20)).toFixed(1) + " MB";
   const fmtDate = (d) => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
 
+  const KINDS = {
+    installer: ["Kurulum", ""],
+    portable: ["Taşınabilir", "Zip dosyası: klasöre çıkar, içindeki exe'yi çalıştır."],
+    zip: ["Zip", "Zip dosyası: klasöre çıkar."],
+    exe: ["Taşınabilir", "Kurulum gerekmez, doğrudan çalıştır."],
+  };
+
   function card(a) {
     const feats = (a.features || []).map((f) => `<li>${esc(f)}</li>`).join("");
+    const [kindLabel, kindHint] = KINDS[a.kind] || KINDS.installer;
     return `<article class="card">
       <div class="card-head">
         <img src="${esc(a.icon)}" alt="" width="56" height="56">
@@ -174,12 +183,14 @@
           <div class="meta">
             <span class="tag version">v${esc(a.version)}</span>
             <span class="tag">${esc(a.platform || "Windows")}</span>
+            <span class="tag">${kindLabel}</span>
             <span class="tag">${fmtDate(a.date)}</span>
           </div>
         </div>
       </div>
       <p class="desc">${esc(a.description)}</p>
       ${feats ? `<ul class="features">${feats}</ul>` : ""}
+      ${kindHint ? `<p class="hint">${kindHint}</p>` : ""}
       <div class="actions">
         <a class="btn btn-primary" href="${esc(a.download)}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
