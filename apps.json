@@ -33,5 +33,20 @@
     "sha256": "073013c1539beb0824c47e054c597f4782e756399369c6e1bcf0416d02a2fba3",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/youtube-video-downloader-v1.0.0/YouTube-Video-Downloader-1.0.0.zip",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=youtube-video-downloader"
+  },
+  {
+    "id": "cerezcord",
+    "name": "Cerezcord",
+    "version": "1.0.0",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "P2P Şifreli Sesli Sohbet Uygulaması",
+    "features": [],
+    "icon": "icons/cerezcord.png",
+    "size": 121916104,
+    "sha256": "56548f762f27cc2afbe0515c742047d7e02924e8ffdec9b0f0b7e834256c60c8",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/cerezcord-v1.0.0/Cerezcord-1.0.0.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
   }
 ]
