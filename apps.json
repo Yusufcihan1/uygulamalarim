@@ -22,7 +22,7 @@
   {
     "id": "silme-testi",
     "name": "Silme Testi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-06",
@@ -31,7 +31,7 @@
     "icon": "icons/silme-testi.png",
     "size": 65536,
     "sha256": "f51fab8041e5023d7290b540a2106f051ef0bd2bc3443c9daf318628b560fa29",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/silme-testi-v1.0.0/Silme-Testi-1.0.0.exe",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/silme-testi-v1.0.1/Silme-Testi-1.0.1.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=silme-testi"
   }
 ]
