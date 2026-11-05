@@ -18,5 +18,20 @@
     "sha256": "31c9c630f47e9d9fa3045381c675fe6344552ec840d00389ec5c3c4357ec0cdb",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.0/PC-Turbo-1.0.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
+  },
+  {
+    "id": "youtube-video-downloader",
+    "name": "YouTube Video Downloader",
+    "version": "1.0.0",
+    "platform": "Windows",
+    "kind": "portable",
+    "date": "2026-11-06",
+    "description": "Ücretsiz Yüksek Kalite Youtube Video İndirme Aracı",
+    "features": [],
+    "icon": "icons/youtube-video-downloader.png",
+    "size": 32727802,
+    "sha256": "073013c1539beb0824c47e054c597f4782e756399369c6e1bcf0416d02a2fba3",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/youtube-video-downloader-v1.0.0/YouTube-Video-Downloader-1.0.0.zip",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=youtube-video-downloader"
   }
 ]
