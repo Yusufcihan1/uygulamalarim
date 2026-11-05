@@ -105,8 +105,8 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         ctk.CTkButton(self.drop, text="Klasör seç", width=130, height=36, corner_radius=18, fg_color=ACCENT,
                       hover_color=ACCENT_HI, font=(FONT, 13, "bold"), command=self.pick_folder).pack(pady=(0, 20))
 
-        ctk.CTkLabel(page, text="Masaüstünde bulunan uygulamalar", font=(FONT, 15, "bold"), text_color=TEXT,
-                     anchor="w").grid(row=2, column=0, sticky="w", pady=(22, 8))
+        self.home_status = ctk.CTkLabel(page, text="", font=(FONT, 13), text_color=MUTED, anchor="w")
+        self.home_status.grid(row=2, column=0, sticky="w", pady=(10, 4))
         self.list = ctk.CTkScrollableFrame(page, fg_color=CARD, corner_radius=18)
         self.list.grid(row=3, column=0, sticky="nsew")
         self.list.grid_columnconfigure(1, weight=1)
@@ -118,7 +118,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         def work():
             try:
                 yayin.ensure_repo()
-                apps = yayin.load_apps()
+                apps = [(a, yayin.published_icon(a["id"])) for a in yayin.load_apps()]
                 found = [(p, yayin.find_icon(p)) for p in yayin.scan_desktop()]
                 self.ui(lambda: self._fill(apps, found))
             except Exception as e:
@@ -134,15 +134,44 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
                 return a
         return None
 
+    def _section(self, row, text):
+        ctk.CTkLabel(self.list, text=text, font=(FONT, 15, "bold"), text_color=TEXT, anchor="w").grid(
+            row=row, column=0, columnspan=4, sticky="w", padx=14, pady=(14 if row == 0 else 24, 4))
+
     def _fill(self, apps, found):
-        self.apps = apps
+        self.apps = [a for a, _ in apps]
         for w in self.list.winfo_children():
             w.destroy()
+
+        row = 0
+        self._section(row, "Sitede yayında")
+        row += 1
+        if not apps:
+            ctk.CTkLabel(self.list, text="Henüz yayında uygulama yok.", text_color=MUTED, font=(FONT, 13)).grid(
+                row=row, column=0, columnspan=4, sticky="w", padx=14, pady=6)
+            row += 1
+        for a, icon in sorted(apps, key=lambda t: t[0].get("name", "").lower()):
+            ctk.CTkLabel(self.list, image=ctk.CTkImage(icon, size=(40, 40)), text="").grid(
+                row=row, column=0, padx=(14, 10), pady=8)
+            box = ctk.CTkFrame(self.list, fg_color="transparent")
+            box.grid(row=row, column=1, sticky="w")
+            ctk.CTkLabel(box, text=a.get("name", a["id"]), font=(FONT, 14, "bold"), text_color=TEXT,
+                         anchor="w").pack(anchor="w")
+            ctk.CTkLabel(box, text=f"v{a.get('version', '?')}  ·  {a.get('date', '')}  ·  {mb(a.get('size', 0))}",
+                         font=(FONT, 12), text_color=MUTED, anchor="w").pack(anchor="w")
+            ctk.CTkButton(self.list, text="Sil", width=100, height=32, corner_radius=16, fg_color=CARD_HI,
+                          hover_color="#4a2530", text_color=RED, font=(FONT, 13),
+                          command=lambda x=a: self.delete_app(x)).grid(row=row, column=3, padx=(8, 14))
+            row += 1
+
+        self._section(row, "Masaüstünde bulunanlar")
+        row += 1
         if not found:
             ctk.CTkLabel(self.list, text="Masaüstünde uygulama klasörü bulunamadı. Yukarıdan klasör seçebilirsin.",
-                         text_color=MUTED, font=(FONT, 13)).grid(row=0, column=0, columnspan=4, pady=30)
+                         text_color=MUTED, font=(FONT, 13)).grid(row=row, column=0, columnspan=4, sticky="w",
+                                                                 padx=14, pady=6)
             return
-        for i, (pkg, icon) in enumerate(found):
+        for i, (pkg, icon) in enumerate(found, start=row):
             img = ctk.CTkImage(icon, size=(40, 40))
             ctk.CTkLabel(self.list, image=img, text="").grid(row=i, column=0, padx=(14, 10), pady=8)
             box = ctk.CTkFrame(self.list, fg_color="transparent")
@@ -157,6 +186,34 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
             ctk.CTkButton(self.list, text="Güncelle" if pub else "Yükle", width=100, height=32, corner_radius=16,
                           fg_color=CARD_HI if pub else ACCENT, hover_color=ACCENT_HI, font=(FONT, 13),
                           command=lambda p=pkg, ic=icon: self.open_form(p, ic)).grid(row=i, column=3, padx=(8, 14))
+
+    def delete_app(self, a):
+        if self.busy:
+            return
+        name = a.get("name", a["id"])
+        if not messagebox.askyesno(
+                "Uygulamayı sil",
+                f"{name} siteden kaldırılsın ve GitHub'daki bütün sürümleri silinsin mi?\n\n"
+                "Bu geri alınamaz. Bilgisayarındaki dosyalara dokunulmaz.", icon="warning"):
+            return
+        self.busy = True
+
+        def log(text):
+            self.ui(lambda: self.home_status.configure(text=text, text_color=MUTED))
+
+        def work():
+            try:
+                n = yayin.unpublish(a["id"], log)
+                self.ui(lambda: self.home_status.configure(
+                    text=f"✓ {name} silindi ({n} sürüm). Site bir dakika içinde güncellenir.", text_color=GREEN))
+            except Exception as e:
+                msg = str(e)
+                self.ui(lambda: self.home_status.configure(text=f"Silinemedi: {msg[:300]}", text_color=RED))
+            finally:
+                self.ui(lambda: setattr(self, "busy", False))
+                self.load()
+
+        threading.Thread(target=work, daemon=True).start()
 
     def pick_folder(self):
         path = filedialog.askdirectory(title="Uygulamanın klasörünü seç", initialdir=yayin.DESKTOP)

@@ -285,3 +285,34 @@ def publish(pkg, app_id, name, version, description, features, icon, log=print):
     _run("git", "commit", "-q", "-m", f"{name} {version} yayınlandı", cwd=WORK)
     _run("git", "push", "-q", cwd=WORK)
     return download
+
+
+def unpublish(app_id, log=print):
+    """Uygulamanın bütün sürümlerini GitHub Releases'ten siler ve siteden kaldırır. Geri alınamaz."""
+    log("Depo güncelleniyor…")
+    ensure_repo()
+    apps = load_apps()
+    app = next((a for a in apps if a.get("id") == app_id), None)
+    releases = json.loads(_run("gh", "release", "list", "--repo", REPO, "--limit", "500", "--json", "tagName"))
+    tags = [r["tagName"] for r in releases if r["tagName"].startswith(f"{app_id}-v")]
+    for i, tag in enumerate(tags, 1):
+        log(f"Sürümler siliniyor ({i}/{len(tags)})…")
+        _run("gh", "release", "delete", tag, "--repo", REPO, "--yes", "--cleanup-tag")
+    log("Site güncelleniyor…")
+    with open(os.path.join(WORK, "apps.json"), "w", encoding="utf-8", newline="\n") as f:
+        json.dump([a for a in apps if a.get("id") != app_id], f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    icon = os.path.join(WORK, "icons", f"{app_id}.png")
+    if os.path.exists(icon):
+        os.remove(icon)
+    _run("git", "add", "-A", cwd=WORK)
+    _run("git", "commit", "-q", "-m", f"{app['name'] if app else app_id} kaldırıldı", cwd=WORK)
+    _run("git", "push", "-q", cwd=WORK)
+    return len(tags)
+
+
+def published_icon(app_id):
+    try:
+        return load_icon(os.path.join(WORK, "icons", f"{app_id}.png"))
+    except OSError:
+        return letter_icon(app_id)
