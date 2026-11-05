@@ -204,8 +204,9 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         def work():
             try:
                 n = yayin.unpublish(a["id"], log)
-                self.ui(lambda: self.home_status.configure(
-                    text=f"✓ {name} silindi ({n} sürüm). Site bir dakika içinde güncellenir.", text_color=GREEN))
+                gone = yayin.wait_live(a["id"], None, log=log)
+                text = f"✓ {name} silindi ({n} sürüm)." + ("" if gone else " Site birkaç dakika içinde güncellenecek.")
+                self.ui(lambda: self.home_status.configure(text=text, text_color=GREEN))
             except Exception as e:
                 msg = str(e)
                 self.ui(lambda: self.home_status.configure(text=f"Silinemedi: {msg[:300]}", text_color=RED))
@@ -378,7 +379,11 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
             try:
                 yayin.publish(self.pkg, self.app_id, name, version, desc, feats, self.icon, log)
                 self.apps = yayin.load_apps()
-                self.ui(lambda: self._done(True, f"✓ {name} v{version} yayınlandı. Site bir dakika içinde güncellenir."))
+                if yayin.wait_live(self.app_id, version, log=log):
+                    text = f"✓ {name} v{version} sitede görünüyor."
+                else:
+                    text = f"✓ {name} v{version} yüklendi. Site birkaç dakika içinde güncellenecek."
+                self.ui(lambda: self._done(True, text))
             except Exception as e:
                 msg = str(e)
                 self.ui(lambda: self._done(False, f"Yayınlanamadı:\n{msg[:400]}"))

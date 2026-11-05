@@ -196,12 +196,48 @@ def _run(*args, cwd=None):
 
 
 def ensure_repo():
-    """Yayın için kullanılan yerel kopyayı hazırlar ve günceller."""
+    """Yayın için kullanılan yerel kopyayı GitHub'daki hâline eşitler.
+
+    Bu kopya yalnız bu araca ait bir önbellek: yarım kalmış bir yayından kalan dosyalar sonraki çekmeyi
+    bozmasın diye birleştirmek yerine doğrudan GitHub'daki hâle sıfırlanır.
+    """
     if not os.path.isdir(os.path.join(WORK, ".git")):
         os.makedirs(os.path.dirname(WORK), exist_ok=True)
         _run("gh", "repo", "clone", REPO, WORK)
-    else:
-        _run("git", "pull", "--rebase", "-q", cwd=WORK)
+        return
+    import time
+    _run("git", "fetch", "-q", "origin", cwd=WORK)
+    for attempt in range(4):
+        try:
+            # Antivirüs dosyayı kısa süre kilitleyebiliyor ("unable to create file ...: File exists").
+            _run("git", "reset", "-q", "--hard", "origin/main", cwd=WORK)
+            _run("git", "clean", "-q", "-fd", cwd=WORK)
+            return
+        except RuntimeError:
+            time.sleep(1 + attempt)
+    shutil.rmtree(WORK, ignore_errors=True)
+    _run("gh", "repo", "clone", REPO, WORK)
+
+
+def wait_live(app_id, version=None, timeout=300, log=print):
+    """Canlı sitedeki apps.json'u, uygulama görünene (version=None ise kaybolana) kadar yoklar."""
+    import time
+    import urllib.request
+    log("GitHub Pages siteyi yayına alıyor (1-3 dk)…")
+    end = time.time() + timeout
+    while time.time() < end:
+        try:
+            url = f"{SITE}apps.json?t={int(time.time())}"
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"Cache-Control": "no-cache"}),
+                                        timeout=15) as r:
+                apps = json.loads(r.read().decode("utf-8-sig"))
+            live = next((a for a in apps if a.get("id") == app_id), None)
+            if (live and live.get("version") == version) if version else live is None:
+                return True
+        except (OSError, ValueError):
+            pass
+        time.sleep(10)
+    return False
 
 
 def load_apps():
@@ -259,6 +295,7 @@ def publish(pkg, app_id, name, version, description, features, icon, log=print):
         shutil.rmtree(tmp, ignore_errors=True)
 
     log("Site güncelleniyor…")
+    ensure_repo()  # yükleme uzun sürebilir; bu arada başka bir yayın olmuş olabilir
     os.makedirs(os.path.join(WORK, "icons"), exist_ok=True)
     icon.save(os.path.join(WORK, "icons", f"{app_id}.png"))
     apps = [a for a in load_apps() if a.get("id") != app_id]
