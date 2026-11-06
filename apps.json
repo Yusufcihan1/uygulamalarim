@@ -30,26 +30,6 @@
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
   },
   {
-    "id": "pc-turbo",
-    "name": "PC Turbo",
-    "version": "1.0.1",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-06",
-    "description": "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM'i temizler, işlemciyi rahatlatır.",
-    "features": [
-      "Arka plan uygulamalarını tek tıkla kapatır",
-      "RAM ve Windows önbelleğini temizler",
-      "Nihai performans güç planına geçer",
-      "Sistem süreçlerine ve açık işlerine dokunmaz"
-    ],
-    "icon": "icons/pc-turbo.png",
-    "size": 14710929,
-    "sha256": "bb564993dd42d20029a1c30dfd8dbadbd75fd6920db968ec86985fc993889ef5",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.1/PC-Turbo-1.0.1.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
-  },
-  {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
     "version": "1.0.3",
@@ -92,5 +72,25 @@
     "sha256": "598ea2f2e30699574753d4a8b684f049344c036987bcaf318d0164e47954f1ca",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/kalkan-v1.0.2/Kalkan-1.0.2.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=kalkan"
+  },
+  {
+    "id": "pc-turbo",
+    "name": "PC Turbo",
+    "version": "1.0.2",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM'i temizler, işlemciyi rahatlatır.",
+    "features": [
+      "Arka plan uygulamalarını tek tıkla kapatır",
+      "RAM ve Windows önbelleğini temizler",
+      "Nihai performans güç planına geçer",
+      "Sistem süreçlerine ve açık işlerine dokunmaz"
+    ],
+    "icon": "icons/pc-turbo.png",
+    "size": 14713287,
+    "sha256": "7051d4767a18ac81cd2df55b3c552b62689bfaabb9b7e21243bc02f76748a1da",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.2/PC-Turbo-1.0.2.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
   }
 ]
