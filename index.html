@@ -140,157 +140,355 @@
   .stage-feats .chip { background: rgba(20, 26, 24, .55); color: var(--text); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .fade { animation: fade .4s ease; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+  /* ---------- menü: etkin sayfa turuncu ---------- */
+  .links { gap: 4px; }
+  .links a { padding: 8px 14px; border-radius: 12px; transition: background .2s, color .2s; }
+  .links a.on { background: var(--accent); color: #fff; }
+  .links a.on:hover { background: var(--accent-2); }
+  [hidden] { display: none !important; }
+  .view { animation: fade .35s ease; }
 
-  /* ---------- tüm uygulamalar ---------- */
-  section { margin-top: 72px; scroll-margin-top: 84px; }
-  #kurulum { scroll-margin-top: 90px; }
-  .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-  .sec-head h2 { margin: 0; font-size: clamp(26px, 3vw, 34px); font-weight: 500; letter-spacing: -.02em; }
-  .tools { display: flex; gap: 12px; align-items: center; flex: 1 1 320px; justify-content: flex-end; }
-  .search {
-    flex: 0 1 340px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 14px;
-    background: var(--glass); border: 1px solid var(--line);
+  /* ---------- ana sayfa ---------- */
+  .acc .get a { color: var(--text); }
+  .stage-link { position: absolute; inset: 0; z-index: 2; }
+  .stage-go {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--text); text-decoration: none;
+    background: rgba(20, 26, 24, .55); border-radius: 999px; padding: 6px 12px;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   }
-  .search svg { flex: none; color: var(--faint); }
-  .search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; padding: 11px 0; }
-  .search input::placeholder { color: var(--faint); }
-  .search:focus-within { border-color: rgba(255, 122, 61, .6); }
-  .count { color: var(--faint); font-size: 14px; white-space: nowrap; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+  .stat { padding: 20px 22px; }
+  .stat b { display: block; font-size: clamp(22px, 2.4vw, 30px); font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .stat span { color: var(--muted); font-size: 13.5px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
-  .card { padding: 22px; display: flex; flex-direction: column; gap: 14px; transition: background .2s, border-color .2s; }
-  .card:hover { background: rgba(255, 255, 255, .075); border-color: rgba(255, 255, 255, .14); }
+  /* ---------- sayfa başlıkları ---------- */
+  .page { margin-top: 34px; }
+  .page-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .page-head h1 { margin: 0; font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
+  .page-head p { margin: 8px 0 0; color: var(--muted); max-width: 560px; }
+  .seg { display: inline-flex; padding: 4px; gap: 2px; border-radius: 14px; background: var(--glass); border: 1px solid var(--line); }
+  .seg button {
+    border: 0; background: none; cursor: pointer; padding: 7px 13px; border-radius: 10px; font-size: 13.5px; color: var(--muted);
+  }
+  .seg button.on { background: var(--glass-2); color: var(--text); }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* ---------- uygulamalar: her kart uygulamanın sayfasına gider ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .card {
+    padding: 22px; display: flex; flex-direction: column; gap: 14px; text-decoration: none;
+    transition: background .2s, border-color .2s, transform .2s;
+  }
+  .card:hover { background: rgba(255, 255, 255, .075); border-color: rgba(255, 255, 255, .14); transform: translateY(-2px); }
   .card-head { display: flex; gap: 14px; align-items: center; }
   .card-head img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
-  .card h3 { margin: 0; font-size: 18px; font-weight: 600; }
+  .card h2 { margin: 0; font-size: 18px; font-weight: 600; }
   .meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
-  .meta .chip.v { color: var(--accent-2); }
+  .chip.v { color: var(--accent-2); }
   .desc { margin: 0; color: var(--muted); font-size: 14.5px; }
-  .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
-  .features li { display: flex; gap: 8px; }
-  .features li::before { content: "✓"; color: var(--accent); font-weight: 700; }
-  .hint { margin: 0; color: var(--faint); font-size: 13px; }
-  .actions { display: flex; gap: 10px; align-items: center; margin-top: auto; padding-top: 4px; flex-wrap: wrap; }
-  .size { color: var(--faint); font-size: 13px; }
-  .ghost { color: var(--muted); font-size: 14px; text-decoration: none; margin-left: auto; }
-  .ghost:hover { color: var(--text); }
+  .card .desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .dl {
-    display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; margin-top: 2px;
+    display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto;
     color: var(--muted); font-size: 13.5px;
   }
   .dl svg { color: var(--accent); flex: none; }
   .dl b { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .dl .more { margin-left: auto; color: var(--text); display: inline-flex; align-items: center; gap: 4px; }
+
+  /* ---------- uygulama sayfası ---------- */
+  .back { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); text-decoration: none; font-size: 14px; margin-bottom: 14px; }
+  .back:hover { color: var(--text); }
+  .detail { display: grid; grid-template-columns: minmax(260px, 2fr) 3fr; gap: 14px; }
+  .art { position: relative; overflow: hidden; min-height: 340px; display: grid; place-items: center; }
+  .art-bg {
+    position: absolute; inset: -20%; background-size: cover; background-position: center;
+    filter: blur(60px) saturate(1.4) brightness(.7);
+  }
+  .art img {
+    position: relative; width: min(210px, 60%); aspect-ratio: 1; border-radius: 22%; object-fit: cover;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255, 255, 255, .08);
+  }
+  .detail-body { padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .detail-body h1 { margin: 0; font-size: clamp(30px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
+  .detail-body .desc { font-size: 15.5px; }
+  .buy { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+  .pill.big { padding: 13px 22px; font-size: 15px; border-radius: 14px; }
+  .file { color: var(--faint); font-size: 13px; word-break: break-all; }
+  .hint { margin: 0; color: var(--faint); font-size: 13.5px; }
+  .hint a { color: var(--accent-2); }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+  .panel { padding: 24px; }
+  .panel h2 { margin: 0 0 14px; font-size: 18px; font-weight: 600; }
+  .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--muted); }
+  .features li { display: flex; gap: 8px; }
+  .features li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+  .hist { display: flex; flex-direction: column; }
+  .hist-row { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .hist-row:first-child { border-top: 0; padding-top: 0; }
+  .hist-row .when { color: var(--muted); }
+  .hist-row .n { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { font-size: 11.5px; font-weight: 600; color: var(--accent-2); background: rgba(255, 122, 61, .12); border-radius: 999px; padding: 2px 8px; }
+  .hash { display: flex; gap: 8px; align-items: stretch; margin-top: 10px; }
+  .hash code {
+    flex: 1; min-width: 0; padding: 10px 12px; border-radius: 12px; background: rgba(0, 0, 0, .22); border: 1px solid var(--line);
+    font: 12.5px/1.5 ui-monospace, Consolas, monospace; color: var(--muted); word-break: break-all;
+  }
+  .copy {
+    border: 1px solid var(--line); background: var(--glass-2); border-radius: 12px; padding: 0 14px; cursor: pointer; font-size: 13.5px;
+  }
+  .copy:hover { background: rgba(255, 255, 255, .14); }
+  .panel p { margin: 0; color: var(--muted); font-size: 14px; }
+  .panel p + p { margin-top: 8px; }
+  .panel code.inline { font: 12.5px ui-monospace, Consolas, monospace; background: rgba(0, 0, 0, .22); padding: 2px 6px; border-radius: 6px; }
+
+  /* ---------- kurulum rehberi ---------- */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; counter-reset: step; }
+  .step { padding: 24px; counter-increment: step; }
+  .step::before {
+    content: counter(step); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px;
+    background: var(--accent); color: #fff; font-weight: 600; margin-bottom: 14px;
+  }
+  .step h2 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+  .step p { margin: 0; color: var(--muted); font-size: 14px; }
+  .step p + p { margin-top: 8px; }
+  .step em { color: var(--text); font-style: normal; font-weight: 500; }
+
+  /* ---------- sürümler ---------- */
+  .day { margin-top: 26px; }
+  .day:first-child { margin-top: 0; }
+  .day h2 { margin: 0 0 10px; font-size: 14px; font-weight: 500; color: var(--faint); text-transform: uppercase; letter-spacing: .06em; }
+  .rel { display: flex; flex-direction: column; padding: 6px 0; }
+  .rel a {
+    display: flex; gap: 14px; align-items: center; padding: 12px 20px; text-decoration: none; border-top: 1px solid var(--line);
+  }
+  .rel a:first-child { border-top: 0; }
+  .rel a:hover { background: rgba(255, 255, 255, .04); }
+  .rel img { width: 38px; height: 38px; border-radius: 10px; flex: none; }
+  .rel .who { min-width: 0; }
+  .rel .who b { font-weight: 600; }
+  .rel .who div { color: var(--muted); font-size: 13px; }
+  .rel .n { margin-left: auto; color: var(--muted); font-size: 13.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* ---------- arama penceresi ---------- */
+  .finder {
+    width: min(560px, calc(100% - 32px)); margin: 12vh auto auto; padding: 10px; border-radius: 22px; color: var(--text);
+    background: rgba(30, 38, 35, .94); border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+  }
+  .finder::backdrop { background: rgba(10, 14, 12, .55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  .search {
+    display: flex; align-items: center; gap: 10px; padding: 0 14px; border-radius: 14px;
+    background: var(--glass); border: 1px solid var(--line);
+  }
+  .search svg { flex: none; color: var(--faint); }
+  .search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; padding: 12px 0; }
+  .search input::placeholder { color: var(--faint); }
+  .search:focus-within { border-color: rgba(255, 122, 61, .6); }
+  .fres { display: flex; flex-direction: column; margin-top: 6px; max-height: 50vh; overflow: auto; }
+  .fres a { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 12px; text-decoration: none; }
+  .fres a:hover, .fres a:focus { background: var(--glass-2); outline: 0; }
+  .fres img { width: 34px; height: 34px; border-radius: 9px; }
+  .fres span { color: var(--muted); font-size: 13px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fres div { min-width: 0; }
 
   .empty, .error { color: var(--faint); padding: 40px 0; text-align: center; grid-column: 1 / -1; }
-  .note { margin-top: 28px; padding: 20px 22px; color: var(--muted); font-size: 14px; }
-  .note strong { color: var(--text); font-weight: 600; }
-  footer { color: var(--faint); font-size: 13px; padding: 32px 0 48px; text-align: center; }
+  .empty a { color: var(--accent-2); }
+  .muted { color: var(--muted); font-size: 14px; }
+  footer { color: var(--faint); font-size: 13px; padding: 40px 0 48px; text-align: center; }
 
   @media (max-width: 860px) {
-    nav { gap: 14px; }
-    .links { display: none; }
     .hero { grid-template-columns: 1fr; min-height: 0; }
     .stage { min-height: 320px; }
     .stage-main { padding-bottom: 110px; }
     .stage-feats { display: none; }
     .side { padding: 30px 18px 18px; }
-    .tools { justify-content: stretch; }
-    .search { flex: 1 1 auto; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .detail { grid-template-columns: 1fr; }
+    .art { min-height: 240px; }
+    .detail-body { padding: 24px 20px; }
   }
-  @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } .nav-end .pill span { display: none; } }
+  @media (max-width: 600px) {
+    nav { gap: 10px; padding-left: 10px; }
+    .brand .name { display: none; }
+    .links { gap: 2px; font-size: 13.5px; }
+    .links a { padding: 8px 10px; }
+    .grid { grid-template-columns: 1fr; }
+  }
   @media (prefers-reduced-motion: reduce) {
-    .stage-icon, .fade { animation: none; }
+    .stage-icon, .fade, .view { animation: none; }
     .acc-body { transition: none; }
+    .card { transition: none; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <nav aria-label="Ana menü">
-    <a class="brand" href="#"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Uygulamalarım</a>
+    <a class="brand" href="#/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="name">Uygulamalarım</span></a>
     <div class="links">
-      <a href="#uygulamalar">Uygulamalar</a>
-      <a href="#kurulum">Kurulum</a>
-      <a href="https://github.com/Yusufcihan1/uygulamalarim/releases">Sürümler</a>
+      <a href="#/uygulamalar" data-nav="apps">Uygulamalar</a>
+      <a href="#/kurulum" data-nav="guide">Kurulum</a>
+      <a href="#/surumler" data-nav="releases">Sürümler</a>
     </div>
-    <div class="nav-end">
-      <a class="pill" href="#uygulamalar">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
-        <span>İndir</span>
-      </a>
-      <a class="square" href="#uygulamalar" id="go-search" aria-label="Uygulama ara">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      </a>
-    </div>
+    <button class="square" id="open-finder" aria-label="Uygulama ara (Ctrl+K)" title="Ara (Ctrl+K)">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
   </nav>
 
-  <div class="hero">
-    <div class="side glass">
-      <h1>Uygulamalarım</h1>
-      <p class="lead">Kendi yaptığım Windows uygulamaları. Kurulum dosyasını indir, çalıştır, kullan.</p>
-      <div class="acc" id="acc"><p class="empty">Yükleniyor…</p></div>
+  <!-- ana sayfa: vitrin ve kısa özet -->
+  <div class="view" data-view="home">
+    <div class="hero">
+      <div class="side glass">
+        <h1>Uygulamalarım</h1>
+        <p class="lead">Kendi yaptığım Windows uygulamaları. Birini seç, sayfasında ayrıntılarına bak ve indir.</p>
+        <div class="acc" id="acc"><p class="empty">Yükleniyor…</p></div>
+      </div>
+      <div class="stage glass" id="stage" aria-live="polite">
+        <div class="stage-bg" id="stage-bg"></div>
+        <div class="stage-main"><img class="stage-icon" id="stage-icon" alt="" hidden></div>
+        <div class="stage-info" id="stage-info"></div>
+      </div>
     </div>
-    <div class="stage glass" id="stage" aria-live="polite">
-      <div class="stage-bg" id="stage-bg"></div>
-      <div class="stage-main"><img class="stage-icon" id="stage-icon" alt="" hidden></div>
-      <div class="stage-info" id="stage-info"></div>
+    <div class="stats">
+      <div class="stat glass"><b id="st-apps">–</b><span>uygulama</span></div>
+      <div class="stat glass"><b id="st-dl">…</b><span>toplam indirme</span></div>
+      <div class="stat glass"><b id="st-rel">…</b><span>yayınlanan sürüm</span></div>
+      <div class="stat glass"><b id="st-last">–</b><span>son güncelleme</span></div>
     </div>
   </div>
 
-  <section id="uygulamalar">
-    <div class="sec-head">
-      <h2>Tüm uygulamalar</h2>
-      <div class="tools">
-        <label class="search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="Uygulama ara" autocomplete="off" aria-label="Uygulama ara">
-        </label>
-        <span class="count" id="count"></span>
+  <!-- tüm uygulamalar -->
+  <div class="view page" data-view="apps" hidden>
+    <div class="page-head">
+      <div>
+        <h1>Uygulamalar</h1>
+        <p id="apps-count"></p>
+      </div>
+      <div class="controls">
+        <div class="seg" id="kind-filter" role="group" aria-label="Türe göre">
+          <button data-kind="" class="on">Tümü</button>
+          <button data-kind="installer">Kurulum</button>
+          <button data-kind="portable">Taşınabilir</button>
+        </div>
+        <div class="seg" id="sort" role="group" aria-label="Sıralama">
+          <button data-sort="new" class="on">En yeni</button>
+          <button data-sort="popular">En çok indirilen</button>
+        </div>
       </div>
     </div>
     <main class="grid" id="grid"><p class="empty">Yükleniyor…</p></main>
+  </div>
 
-    <div class="note glass" id="kurulum">
-      <strong>Windows "bilgisayarınız korundu" derse:</strong> Uygulamalar dijital imzasız olduğu için SmartScreen
-      uyarı verebilir. <em>Ek bilgi</em> → <em>Yine de çalıştır</em> ile devam edebilirsin. Kurulu uygulamalar yeni
-      sürümü kendileri bulur: içindeki <em>Güncellemeleri denetle</em> düğmesine bas.
+  <!-- tek uygulama -->
+  <div class="view page" data-view="app" id="app" hidden></div>
+
+  <!-- kurulum rehberi -->
+  <div class="view page" data-view="guide" hidden>
+    <div class="page-head">
+      <div>
+        <h1>Kurulum rehberi</h1>
+        <p>İndirmeden kaldırmaya kadar bilmen gereken her şey. Uygulamalar Windows 10 ve 11'de çalışır.</p>
+      </div>
     </div>
-  </section>
+    <div class="steps">
+      <div class="step glass">
+        <h2>Dosyayı indir</h2>
+        <p>Uygulamanın sayfasındaki <em>İndir</em> düğmesine bas. Dosya GitHub üzerinden, doğrudan bilgisayarına iner.</p>
+        <p>Dosyanın değişmediğinden emin olmak istersen sayfadaki SHA-256 değerini aşağıdaki gibi karşılaştırabilirsin.</p>
+      </div>
+      <div class="step glass">
+        <h2>Windows uyarısını geç</h2>
+        <p>Uygulamalar dijital imzasız olduğu için Windows <em>"Bilgisayarınız korundu"</em> diyebilir.</p>
+        <p><em>Ek bilgi</em> yazısına, sonra <em>Yine de çalıştır</em> düğmesine bas.</p>
+      </div>
+      <div class="step glass">
+        <h2>Kur ya da çıkar</h2>
+        <p><em>Kurulum</em> türündeki uygulamalarda indirdiğin exe kurulum sihirbazını açar; yönetici izni istemeden senin hesabına kurulur.</p>
+        <p><em>Taşınabilir</em> olanlar zip dosyasıdır: bir klasöre çıkar, içindeki exe'yi çalıştır.</p>
+      </div>
+      <div class="step glass">
+        <h2>Güncel tut</h2>
+        <p>Kurulu uygulamalar yeni sürümü kendileri bulur. Uygulamanın içindeki <em>Güncellemeleri denetle</em> düğmesine basman yeterli.</p>
+        <p>Neyin ne zaman çıktığını <a href="#/surumler" style="color:var(--accent-2)">Sürümler</a> sayfasında görebilirsin.</p>
+      </div>
+      <div class="step glass">
+        <h2>Kaldır</h2>
+        <p>Kurulum türündekiler: <em>Ayarlar → Uygulamalar → Yüklü uygulamalar</em> listesinden kaldır.</p>
+        <p>Taşınabilir olanlar: çıkardığın klasörü silmen yeterli.</p>
+      </div>
+    </div>
+    <div class="panels">
+      <div class="panel glass">
+        <h2>Dosyayı doğrulama</h2>
+        <p>PowerShell'i aç ve indirdiğin dosya için şunu çalıştır:</p>
+        <p><code class="inline">Get-FileHash "$env:USERPROFILE\Downloads\DOSYA_ADI.exe"</code></p>
+        <p>Çıkan değer, uygulamanın sayfasındaki SHA-256 değeriyle aynıysa dosya bozulmamış ve değiştirilmemiş demektir.</p>
+      </div>
+      <div class="panel glass">
+        <h2>Claude kullanan uygulamalar</h2>
+        <p>PDF Stüdyo ve Kalkan'daki yapay zekâ araçları kendi Anthropic API anahtarınla çalışır. Anahtarı uygulamanın ayarlarına girersin; anahtar yalnızca senin bilgisayarında saklanır.</p>
+        <p>Anahtar girmesen de bu araçlar dışındaki her şey çalışır.</p>
+      </div>
+    </div>
+  </div>
 
-  <footer>Yusuf Cihan · Dosyalar GitHub Releases üzerinden indirilir.</footer>
+  <!-- sürümler -->
+  <div class="view page" data-view="releases" hidden>
+    <div class="page-head">
+      <div>
+        <h1>Sürümler</h1>
+        <p>Yayınlanan her sürüm, en yenisi en üstte. Bir satıra basınca uygulamanın sayfası açılır.</p>
+      </div>
+    </div>
+    <div id="timeline"><p class="empty">Yükleniyor…</p></div>
+  </div>
+
+  <footer>Yusuf Cihan · Dosyalar <a href="https://github.com/Yusufcihan1/uygulamalarim/releases">GitHub Releases</a> üzerinden indirilir.</footer>
 </div>
+
+<dialog class="finder" id="finder" aria-label="Uygulama ara">
+  <label class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="fq" type="search" placeholder="Uygulama ya da özellik ara" autocomplete="off" aria-label="Ara">
+  </label>
+  <div class="fres" id="fres"></div>
+</dialog>
 
 <script>
   const $ = (id) => document.getElementById(id);
-  const grid = $("grid"), count = $("count"), q = $("q"), acc = $("acc");
+  const acc = $("acc"), grid = $("grid");
   let apps = [], active = null;
-  let downloads = null;            // { uygulama-id: toplam indirme } — GitHub'dan gelir
-  let dlFailed = false;            // GitHub'a ulaşılamazsa sayılar hiç gösterilmez
+  let releases = null;             // [{ id, v, t, n }] — GitHub'dan gelir; ulaşılamazsa false
+  let kindFilter = "", sortBy = "new";
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fmtSize = (b) => b >= 1 << 30 ? (b / (1 << 30)).toFixed(1) + " GB" : (b / (1 << 20)).toFixed(1) + " MB";
   const fmtDate = (d) => new Date(d).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+  const fmtTime = (d) => new Date(d).toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" });
   const fmtNum = (n) => n.toLocaleString("tr-TR");
+  const appUrl = (a) => `#/uygulama/${encodeURIComponent(a.id)}`;
 
   const KINDS = {
-    installer: ["Kurulum", ""],
-    portable: ["Taşınabilir", "Zip dosyası: klasöre çıkar, içindeki exe'yi çalıştır."],
-    zip: ["Zip", "Zip dosyası: klasöre çıkar."],
+    installer: ["Kurulum", "Kurulum sihirbazı açılır; yönetici izni gerekmez."],
+    portable: ["Taşınabilir", "Zip dosyası: bir klasöre çıkar, içindeki exe'yi çalıştır."],
+    zip: ["Zip", "Zip dosyası: bir klasöre çıkar."],
     exe: ["Taşınabilir", "Kurulum gerekmez, doğrudan çalıştır."],
   };
+  const kindOf = (a) => KINDS[a.kind] || KINDS.installer;
+  const isPortable = (a) => a.kind && a.kind !== "installer";
   const ICON_DL = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>`;
   const ICON_ARROW = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>`;
 
-  const dlText = (a) => downloads == null ? "…" : fmtNum(downloads[a.id] || 0);
+  // Bir uygulamanın tüm sürümlerindeki indirmelerin toplamı.
+  const downloadsOf = (id) => releases ? releases.filter((r) => r.id === id).reduce((s, r) => s + r.n, 0) : 0;
+  const dlText = (a) => releases == null ? "…" : fmtNum(downloadsOf(a.id));
 
-  // ---------- vitrin: soldaki açılır liste, sağdaki büyük görsel ----------
+  // ---------- ana sayfa: soldaki açılır liste, sağdaki büyük görsel ----------
   function renderAcc() {
     acc.innerHTML = apps.map((a) => {
       const on = a.id === active;
-      const [kindLabel] = KINDS[a.kind] || KINDS.installer;
       return `<div class="acc-item${on ? " on" : ""}">
         <button class="acc-head" data-id="${esc(a.id)}" aria-expanded="${on}">${esc(a.name)}</button>
         <div class="acc-body"><div class="acc-inner">
@@ -298,12 +496,11 @@
             <p>${esc(a.description)}</p>
             <div class="chips">
               <span class="chip"><b>v${esc(a.version)}</b></span>
-              <span class="chip">${kindLabel}</span>
-              ${a.size ? `<span class="chip">${fmtSize(a.size)}</span>` : ""}
-              ${dlFailed ? "" : `<span class="chip"><b data-dl="${esc(a.id)}">${dlText(a)}</b> indirme</span>`}
+              <span class="chip">${kindOf(a)[0]}</span>
+              ${releases === false ? "" : `<span class="chip"><b data-dl="${esc(a.id)}">${dlText(a)}</b> indirme</span>`}
             </div>
           </div>
-          <div class="get"><a href="${esc(a.download)}" tabindex="${on ? 0 : -1}"><span class="ico">${ICON_ARROW}</span>İndir</a></div>
+          <div class="get"><a href="${appUrl(a)}" tabindex="${on ? 0 : -1}"><span class="ico">${ICON_ARROW}</span>Uygulamayı incele</a></div>
         </div></div>
       </div>`;
     }).join("");
@@ -318,15 +515,21 @@
     img.src = a.icon;
     img.alt = a.name;
     img.classList.remove("fade"); void img.offsetWidth; img.classList.add("fade");
-    const feats = (a.features || []).slice(0, 4).map((f) => `<span class="chip">${esc(f)}</span>`).join("");
-    $("stage-info").innerHTML = `<div class="fade">
+    const feats = (a.features || []).slice(0, 3).map((f) => `<span class="chip">${esc(f)}</span>`).join("");
+    $("stage-info").innerHTML = `<a class="stage-link" href="${appUrl(a)}" aria-label="${esc(a.name)} sayfasını aç"></a>
+      <div class="fade">
         <div class="stage-name">${esc(a.name)}</div>
-        <div class="chips" style="margin-top:8px">
-          <span class="chip">${esc(a.platform || "Windows")}</span>
-          <span class="chip">${fmtDate(a.date)}</span>
-        </div>
+        <div class="chips" style="margin-top:8px"><span class="stage-go">Sayfasına git ${ICON_ARROW}</span></div>
       </div>
       <div class="stage-feats fade">${feats}</div>`;
+  }
+
+  function renderStats() {
+    $("st-apps").textContent = apps.length;
+    const last = apps.reduce((m, a) => (a.date > m ? a.date : m), "");
+    $("st-last").textContent = last ? fmtDate(last) : "–";
+    $("st-dl").textContent = releases ? fmtNum(releases.reduce((s, r) => s + r.n, 0)) : releases === false ? "–" : "…";
+    $("st-rel").textContent = releases ? releases.length : releases === false ? "–" : "…";
   }
 
   function select(id) {
@@ -340,53 +543,196 @@
     if (b) select(b.dataset.id);
   });
 
-  // ---------- tüm uygulamalar ----------
+  // ---------- uygulamalar ----------
   function card(a) {
-    const feats = (a.features || []).map((f) => `<li>${esc(f)}</li>`).join("");
-    const [kindLabel, kindHint] = KINDS[a.kind] || KINDS.installer;
-    return `<article class="card glass">
+    return `<a class="card glass" href="${appUrl(a)}">
       <div class="card-head">
         <img src="${esc(a.icon)}" alt="" width="56" height="56" loading="lazy">
         <div>
-          <h3>${esc(a.name)}</h3>
+          <h2>${esc(a.name)}</h2>
           <div class="meta">
             <span class="chip v">v${esc(a.version)}</span>
-            <span class="chip">${esc(a.platform || "Windows")}</span>
-            <span class="chip">${kindLabel}</span>
-            <span class="chip">${fmtDate(a.date)}</span>
+            <span class="chip">${kindOf(a)[0]}</span>
+            ${a.size ? `<span class="chip">${fmtSize(a.size)}</span>` : ""}
           </div>
         </div>
       </div>
       <p class="desc">${esc(a.description)}</p>
-      ${feats ? `<ul class="features">${feats}</ul>` : ""}
-      ${kindHint ? `<p class="hint">${kindHint}</p>` : ""}
-      <div class="actions">
-        <a class="pill" href="${esc(a.download)}">${ICON_DL}İndir</a>
-        <span class="size">${a.size ? fmtSize(a.size) : ""}</span>
-        ${a.release ? `<a class="ghost" href="${esc(a.release)}">Tüm sürümler</a>` : ""}
-      </div>
-      ${dlFailed ? "" : `<div class="dl">${ICON_DL}<span><b data-dl="${esc(a.id)}">${dlText(a)}</b> kez indirildi</span></div>`}
-    </article>`;
+      <div class="dl">${releases === false ? "" : `${ICON_DL}<span><b data-dl="${esc(a.id)}">${dlText(a)}</b> kez indirildi</span>`}
+        <span class="more">İncele ${ICON_ARROW}</span></div>
+    </a>`;
   }
 
-  function render() {
-    const term = q.value.trim().toLocaleLowerCase("tr");
-    const list = apps.filter((a) =>
-      !term || [a.name, a.description, ...(a.features || [])].join(" ").toLocaleLowerCase("tr").includes(term));
-    grid.innerHTML = list.length ? list.map(card).join("") : `<p class="empty">Eşleşen uygulama yok.</p>`;
-    count.textContent = `${list.length} uygulama`;
+  function renderGrid() {
+    let list = apps.filter((a) => !kindFilter || (kindFilter === "portable" ? isPortable(a) : !isPortable(a)));
+    if (sortBy === "popular") list = [...list].sort((a, b) => downloadsOf(b.id) - downloadsOf(a.id));
+    grid.innerHTML = list.length ? list.map(card).join("") : `<p class="empty">Bu türde uygulama yok.</p>`;
+    $("apps-count").textContent = `${apps.length} uygulama · hepsi ücretsiz, hepsi Windows için.`;
   }
 
-  function paintDownloads() {
-    document.querySelectorAll("[data-dl]").forEach((el) => {
-      el.textContent = fmtNum((downloads || {})[el.dataset.dl] || 0);
+  function segment(el, attr, set) {
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      el.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+      set(b.dataset[attr]);
+      renderGrid();
     });
   }
+  segment($("kind-filter"), "kind", (v) => { kindFilter = v; });
+  segment($("sort"), "sort", (v) => { sortBy = v; });
 
-  // İndirme sayıları: her uygulamanın tüm sürümlerindeki dosyaların indirilme toplamı (GitHub Releases).
-  // GitHub saatte 60 isteğe izin verdiği için sonuç tarayıcıda 15 dakika saklanır.
-  const CACHE_KEY = "indirmeler-v1";
-  async function loadDownloads() {
+  // ---------- uygulama sayfası (İndir düğmesi yalnızca burada) ----------
+  function history(a) {
+    if (releases === false) return `<p>Sürüm geçmişi şu an alınamadı. <a href="${esc(a.release)}" style="color:var(--accent-2)">GitHub'da gör</a></p>`;
+    if (!releases) return `<p>Yükleniyor…</p>`;
+    const list = releases.filter((r) => r.id === a.id);
+    if (!list.length) return `<p>Henüz kayıtlı sürüm yok.</p>`;
+    return `<div class="hist">${list.map((r, i) => `<div class="hist-row">
+        <b>v${esc(r.v)}</b>${i === 0 ? `<span class="tag">Güncel</span>` : ""}
+        <span class="when">${fmtDate(r.t)}</span>
+        <span class="n">${fmtNum(r.n)} indirme</span>
+      </div>`).join("")}</div>`;
+  }
+
+  function renderApp(id) {
+    const a = apps.find((x) => x.id === id);
+    const box = $("app");
+    if (!a) {
+      box.innerHTML = `<p class="empty">Bu uygulama bulunamadı. <a href="#/uygulamalar">Tüm uygulamalara dön</a></p>`;
+      return null;
+    }
+    const [kindLabel, kindHint] = kindOf(a);
+    const feats = (a.features || []).map((f) => `<li>${esc(f)}</li>`).join("");
+    box.innerHTML = `<a class="back" href="#/uygulamalar">← Tüm uygulamalar</a>
+      <div class="detail">
+        <div class="art glass"><div class="art-bg" style="background-image:url('${esc(a.icon)}')"></div>
+          <img src="${esc(a.icon)}" alt="${esc(a.name)} simgesi"></div>
+        <div class="detail-body glass">
+          <h1>${esc(a.name)}</h1>
+          <div class="chips" style="margin:0">
+            <span class="chip v"><b>v${esc(a.version)}</b></span>
+            <span class="chip">${esc(a.platform || "Windows")}</span>
+            <span class="chip">${kindLabel}</span>
+            ${a.size ? `<span class="chip">${fmtSize(a.size)}</span>` : ""}
+            <span class="chip">${fmtDate(a.date)}</span>
+            ${releases === false ? "" : `<span class="chip"><b data-dl="${esc(a.id)}">${dlText(a)}</b> indirme</span>`}
+          </div>
+          <p class="desc">${esc(a.description)}</p>
+          <div class="buy">
+            <a class="pill big" href="${esc(a.download)}">${ICON_DL}İndir</a>
+            <span class="file">${esc(a.download.split("/").pop())}</span>
+          </div>
+          <p class="hint">${kindHint} İlk kez kuruyorsan <a href="#/kurulum">kurulum rehberine</a> göz at.</p>
+        </div>
+      </div>
+      <div class="panels">
+        ${feats ? `<div class="panel glass"><h2>Neler yapar</h2><ul class="features">${feats}</ul></div>` : ""}
+        <div class="panel glass"><h2>Sürüm geçmişi</h2><div id="hist">${history(a)}</div></div>
+        ${a.sha256 ? `<div class="panel glass"><h2>Dosya doğrulama</h2>
+          <p>İndirdiğin dosyanın SHA-256 değeri bununla aynı olmalı.</p>
+          <div class="hash"><code>${esc(a.sha256)}</code><button class="copy" data-copy="${esc(a.sha256)}">Kopyala</button></div>
+        </div>` : ""}
+      </div>`;
+    return a;
+  }
+  $("app").addEventListener("click", (e) => {
+    const b = e.target.closest(".copy");
+    if (!b) return;
+    navigator.clipboard.writeText(b.dataset.copy).then(() => {
+      b.textContent = "Kopyalandı";
+      setTimeout(() => { b.textContent = "Kopyala"; }, 1500);
+    }).catch(() => {});
+  });
+
+  // ---------- sürümler: güne göre gruplu zaman çizelgesi ----------
+  function renderTimeline() {
+    const box = $("timeline");
+    if (releases === false) {
+      box.innerHTML = `<p class="empty">Sürüm listesi şu an alınamadı. <a href="https://github.com/Yusufcihan1/uygulamalarim/releases">GitHub'da gör</a></p>`;
+      return;
+    }
+    if (!releases) return;
+    const byId = Object.fromEntries(apps.map((a) => [a.id, a]));
+    const first = {};                                   // her uygulamanın ilk sürümü
+    for (const r of releases) if (!first[r.id] || r.t < first[r.id].t) first[r.id] = r;
+    const days = new Map();
+    for (const r of releases) {
+      const d = fmtDate(r.t);
+      if (!days.has(d)) days.set(d, []);
+      days.get(d).push(r);
+    }
+    box.innerHTML = [...days].map(([day, list]) => `<div class="day"><h2>${day}</h2>
+      <div class="rel glass">${list.map((r) => {
+        const a = byId[r.id];
+        const name = a ? a.name : r.id;
+        return `<a href="${a ? appUrl(a) : "#/surumler"}">
+          ${a ? `<img src="${esc(a.icon)}" alt="" loading="lazy">` : ""}
+          <div class="who"><b>${esc(name)}</b> <span class="chip v">v${esc(r.v)}</span>
+            <div>${first[r.id] === r ? "İlk sürüm" : "Güncelleme"} · ${fmtTime(r.t)}</div></div>
+          <span class="n">${fmtNum(r.n)} indirme</span>
+        </a>`;
+      }).join("")}</div></div>`).join("");
+  }
+
+  // ---------- arama penceresi ----------
+  const finder = $("finder"), fq = $("fq"), fres = $("fres");
+  function renderFinder() {
+    const term = fq.value.trim().toLocaleLowerCase("tr");
+    const list = apps.filter((a) =>
+      !term || [a.name, a.description, ...(a.features || [])].join(" ").toLocaleLowerCase("tr").includes(term));
+    fres.innerHTML = list.length ? list.map((a) => `<a href="${appUrl(a)}">
+        <img src="${esc(a.icon)}" alt=""><div><b>${esc(a.name)}</b><span>${esc(a.description)}</span></div></a>`).join("")
+      : `<p class="empty" style="padding:24px 0">Eşleşen uygulama yok.</p>`;
+  }
+  function openFinder() {
+    fq.value = "";
+    renderFinder();
+    finder.showModal();
+    fq.focus();
+  }
+  $("open-finder").addEventListener("click", openFinder);
+  fq.addEventListener("input", renderFinder);
+  fq.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { const first = fres.querySelector("a"); if (first) first.click(); }
+  });
+  fres.addEventListener("click", (e) => { if (e.target.closest("a")) finder.close(); });
+  finder.addEventListener("click", (e) => { if (e.target === finder) finder.close(); });
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); finder.open ? finder.close() : openFinder(); }
+  });
+
+  // ---------- sayfalar: #/, #/uygulamalar, #/uygulama/<id>, #/kurulum, #/surumler ----------
+  const ROUTES = { "": "home", "uygulamalar": "apps", "kurulum": "guide", "surumler": "releases" };
+  const TITLES = { home: "", apps: "Uygulamalar", guide: "Kurulum rehberi", releases: "Sürümler" };
+  let current = null;
+
+  function route() {
+    const path = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+    let view = ROUTES[path], title = TITLES[view];
+    if (path.startsWith("uygulama/")) {
+      view = "app";
+      const a = renderApp(path.slice(9));
+      title = a ? a.name : "Bulunamadı";
+    } else if (!view) {
+      view = "home"; title = "";
+    }
+    document.querySelectorAll(".view").forEach((v) => { v.hidden = v.dataset.view !== view; });
+    const nav = view === "app" ? "apps" : view;
+    document.querySelectorAll("[data-nav]").forEach((l) => {
+      l.classList.toggle("on", l.dataset.nav === nav);
+      if (l.dataset.nav === nav) l.setAttribute("aria-current", "page"); else l.removeAttribute("aria-current");
+    });
+    document.title = title ? `${title} · Uygulamalarım` : "Uygulamalarım";
+    if (current !== null) window.scrollTo({ top: 0, behavior: "instant" });
+    current = path;
+  }
+  window.addEventListener("hashchange", route);
+
+  // Sürümler ve indirme sayıları GitHub Releases'tan gelir. GitHub saatte 60 isteğe izin verdiği için
+  // sonuç tarayıcıda 15 dakika saklanır.
+  const CACHE_KEY = "surumler-v1";
+  async function loadReleases() {
     try {
       const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
       if (c && Date.now() - c.t < 15 * 60 * 1000) return c.d;
@@ -394,13 +740,28 @@
     const r = await fetch("https://api.github.com/repos/Yusufcihan1/uygulamalarim/releases?per_page=100",
       { headers: { Accept: "application/vnd.github+json" } });
     if (!r.ok) throw new Error(r.status);
-    const d = {};
+    const d = [];
     for (const rel of await r.json()) {
-      const id = rel.tag_name.replace(/-v[\d.]+$/, "");
-      d[id] = (d[id] || 0) + rel.assets.reduce((s, x) => s + (x.download_count || 0), 0);
+      const m = /^(.*)-v([\d.]+)$/.exec(rel.tag_name);
+      if (!m || rel.draft) continue;
+      d.push({ id: m[1], v: m[2], t: rel.published_at || rel.created_at,
+               n: rel.assets.reduce((s, x) => s + (x.download_count || 0), 0) });
     }
+    d.sort((a, b) => (a.t < b.t ? 1 : -1));
     try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d })); } catch (_) { /* yok say */ }
     return d;
+  }
+
+  function refreshCounts() {
+    document.querySelectorAll("[data-dl]").forEach((el) => { el.textContent = fmtNum(downloadsOf(el.dataset.dl)); });
+    renderStats();
+    renderTimeline();
+    const hist = $("hist"), path = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+    if (hist && path.startsWith("uygulama/")) {
+      const a = apps.find((x) => x.id === path.slice(9));
+      if (a) hist.innerHTML = history(a);
+    }
+    if (sortBy === "popular") renderGrid();
   }
 
   fetch("apps.json", { cache: "no-store" })
@@ -410,16 +771,17 @@
       active = apps[0] && apps[0].id;
       renderAcc();
       renderStage();
-      render();
-      loadDownloads()
-        .then((d) => { downloads = d; paintDownloads(); })
-        .catch(() => { dlFailed = true; renderAcc(); render(); });
+      renderStats();
+      renderGrid();
+      route();
+      loadReleases()
+        .then((d) => { releases = d; refreshCounts(); })
+        .catch(() => { releases = false; renderAcc(); renderGrid(); refreshCounts(); route(); });
     })
     .catch(() => {
       grid.innerHTML = acc.innerHTML = `<p class="error">Uygulama listesi yüklenemedi.</p>`;
+      route();
     });
-  q.addEventListener("input", () => { render(); if (downloads) paintDownloads(); });
-  $("go-search").addEventListener("click", () => setTimeout(() => q.focus({ preventScroll: true }), 400));
 </script>
 </body>
 </html>
