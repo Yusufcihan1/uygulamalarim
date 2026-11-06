@@ -74,7 +74,7 @@
   {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-06",
@@ -88,9 +88,9 @@
       "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında"
     ],
     "icon": "icons/pdf-studyo.png",
-    "size": 86793270,
-    "sha256": "3c814a0c537dac4e76401666b5769c29c1d7d0c2cc5a163a0a45d54d1a114422",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.1/PDF-Studyo-1.0.1.exe",
+    "size": 86808483,
+    "sha256": "ffde5d69eb0291cefa86c92d39d75069de18446cb8969efeefb22b2f8ba37b69",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.2/PDF-Studyo-1.0.2.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
   }
 ]
