@@ -54,7 +54,7 @@
   {
     "id": "pc-turbo",
     "name": "PC Turbo",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-06",
@@ -66,9 +66,9 @@
       "Sistem süreçlerine ve açık işlerine dokunmaz"
     ],
     "icon": "icons/pc-turbo.png",
-    "size": 14713287,
-    "sha256": "7051d4767a18ac81cd2df55b3c552b62689bfaabb9b7e21243bc02f76748a1da",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.2/PC-Turbo-1.0.2.exe",
+    "size": 14711333,
+    "sha256": "f726f76a0eba82c539f5930002922a903e725124db4b3842da91b8216d7a1340",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.3/PC-Turbo-1.0.3.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
   },
   {
