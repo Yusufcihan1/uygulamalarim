@@ -48,5 +48,27 @@
     "sha256": "56548f762f27cc2afbe0515c742047d7e02924e8ffdec9b0f0b7e834256c60c8",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/cerezcord-v1.0.0/Cerezcord-1.0.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
+  },
+  {
+    "id": "pdf-studyo",
+    "name": "PDF Stüdyo",
+    "version": "1.0.0",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Acrobat Pro araçlarının sade, Türkçe karşılığı. Metin tanıma, Word/Excel/PowerPoint'e çevirme, özet, belgeyle sohbet, çeviri ve karartma Claude ile; sayfa düzenleme, imza ve parola bilgisayarında. Claude araçları için kendi API anahtarın gerekir.",
+    "features": [
+      "51 araç: düzenle, sayfalar, işaretle, dönüştür, formlar, koru",
+      "Metin tanıma, el yazısı ve tablo okuma (Claude)",
+      "PDF'ten Word, Excel ve PowerPoint'e çevirme (Claude)",
+      "Belgeyle sohbet: cevaplar sayfasıyla gelir",
+      "Yapay zekâ ile karartma, karşılaştırma, form doldurma",
+      "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında"
+    ],
+    "icon": "icons/pdf-studyo.png",
+    "size": 86792039,
+    "sha256": "d9ada8fb49ed86be760813b1446de454eb3f31bc3c457330c3a4041d981a964e",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.0/PDF-Studyo-1.0.0.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
   }
 ]
