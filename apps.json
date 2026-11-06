@@ -52,26 +52,6 @@
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=kalkan"
   },
   {
-    "id": "pc-turbo",
-    "name": "PC Turbo",
-    "version": "1.0.3",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-06",
-    "description": "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM'i temizler, işlemciyi rahatlatır.",
-    "features": [
-      "Arka plan uygulamalarını tek tıkla kapatır",
-      "RAM ve Windows önbelleğini temizler",
-      "Nihai performans güç planına geçer",
-      "Sistem süreçlerine ve açık işlerine dokunmaz"
-    ],
-    "icon": "icons/pc-turbo.png",
-    "size": 14711333,
-    "sha256": "f726f76a0eba82c539f5930002922a903e725124db4b3842da91b8216d7a1340",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.3/PC-Turbo-1.0.3.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
-  },
-  {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
     "version": "1.0.5",
@@ -93,5 +73,26 @@
     "sha256": "10c15d3bb621948b7c4febf122da355dd2f1495112cd8e29fd038ed956ef41a3",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.5/PDF-Studyo-1.0.5.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
+  },
+  {
+    "id": "pc-turbo",
+    "name": "PC Turbo",
+    "version": "1.0.4",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Tek tıkla bilgisayarı hızlandırır: arka plan uygulamalarını kapatır, RAM'i temizler, işlemciyi rahatlatır.",
+    "features": [
+      "Arka plan uygulamalarını tek tıkla kapatır",
+      "RAM ve Windows önbelleğini temizler",
+      "Nihai performans güç planına geçer",
+      "Sistem süreçlerine ve açık işlerine dokunmaz",
+      "Valorant Modu: Riot ve Valorant dışındaki her şeyi kapatıp işlemci, RAM ve ekran kartını oyuna verir"
+    ],
+    "icon": "icons/pc-turbo.png",
+    "size": 14722248,
+    "sha256": "79ee2061c4633bfc734f8104d9925a73a3d66b622ec09974159196c1fe218c2a",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.4/PC-Turbo-1.0.4.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
   }
 ]
