@@ -74,7 +74,7 @@
   {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-06",
@@ -85,12 +85,13 @@
       "PDF'ten Word, Excel ve PowerPoint'e çevirme (Claude)",
       "Belgeyle sohbet: cevaplar sayfasıyla gelir",
       "Yapay zekâ ile karartma, karşılaştırma, form doldurma",
-      "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında"
+      "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında",
+      "Koyu tema ve varsayılan PDF uygulaması olarak kullanma"
     ],
     "icon": "icons/pdf-studyo.png",
-    "size": 86827465,
-    "sha256": "6541903636ae1952544ffb0b8d845fd24db33555c8939e90758548b2626d58d2",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.4/PDF-Studyo-1.0.4.exe",
+    "size": 86826711,
+    "sha256": "10c15d3bb621948b7c4febf122da355dd2f1495112cd8e29fd038ed956ef41a3",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.5/PDF-Studyo-1.0.5.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
   }
 ]
