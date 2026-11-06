@@ -50,28 +50,6 @@
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
   },
   {
-    "id": "pdf-studyo",
-    "name": "PDF Stüdyo",
-    "version": "1.0.0",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-06",
-    "description": "Acrobat Pro araçlarının sade, Türkçe karşılığı. Metin tanıma, Word/Excel/PowerPoint'e çevirme, özet, belgeyle sohbet, çeviri ve karartma Claude ile; sayfa düzenleme, imza ve parola bilgisayarında. Claude araçları için kendi API anahtarın gerekir.",
-    "features": [
-      "51 araç: düzenle, sayfalar, işaretle, dönüştür, formlar, koru",
-      "Metin tanıma, el yazısı ve tablo okuma (Claude)",
-      "PDF'ten Word, Excel ve PowerPoint'e çevirme (Claude)",
-      "Belgeyle sohbet: cevaplar sayfasıyla gelir",
-      "Yapay zekâ ile karartma, karşılaştırma, form doldurma",
-      "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında"
-    ],
-    "icon": "icons/pdf-studyo.png",
-    "size": 86792039,
-    "sha256": "d9ada8fb49ed86be760813b1446de454eb3f31bc3c457330c3a4041d981a964e",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.0/PDF-Studyo-1.0.0.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
-  },
-  {
     "id": "kalkan",
     "name": "Kalkan",
     "version": "1.0.0",
@@ -92,5 +70,27 @@
     "sha256": "9513291eae5239bdc5de7f9fafd24e8814f111514fd3d36706d0a400184faca8",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/kalkan-v1.0.0/Kalkan-1.0.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=kalkan"
+  },
+  {
+    "id": "pdf-studyo",
+    "name": "PDF Stüdyo",
+    "version": "1.0.1",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Acrobat Pro araçlarının sade, Türkçe karşılığı. Metin tanıma, Word/Excel/PowerPoint'e çevirme, özet, belgeyle sohbet, çeviri ve karartma Claude ile; sayfa düzenleme, imza ve parola bilgisayarında. Claude araçları için kendi API anahtarın gerekir.",
+    "features": [
+      "51 araç: düzenle, sayfalar, işaretle, dönüştür, formlar, koru",
+      "Metin tanıma, el yazısı ve tablo okuma (Claude)",
+      "PDF'ten Word, Excel ve PowerPoint'e çevirme (Claude)",
+      "Belgeyle sohbet: cevaplar sayfasıyla gelir",
+      "Yapay zekâ ile karartma, karşılaştırma, form doldurma",
+      "İmza, dijital imza, parola, sıkıştırma, birleştirme bilgisayarında"
+    ],
+    "icon": "icons/pdf-studyo.png",
+    "size": 86793270,
+    "sha256": "3c814a0c537dac4e76401666b5769c29c1d7d0c2cc5a163a0a45d54d1a114422",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.1/PDF-Studyo-1.0.1.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
   }
 ]
