@@ -50,28 +50,6 @@
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=cerezcord"
   },
   {
-    "id": "kalkan",
-    "name": "Kalkan",
-    "version": "1.0.0",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-06",
-    "description": "Defender'ın üstüne katman ekleyen Türkçe güvenlik uygulaması: çoklu tarama motoru, derin tarama, fidye yazılımı kalkanı, DNS filtresi ve sıkılaştırma. İstersen Claude dosyaları ve şüpheli mesajları açıklar (kendi API anahtarınla).",
-    "features": [
-      "Defender + ClamAV + YARA + MalwareBazaar + VirusTotal",
-      "Derin tarama: başlangıç, görevler, servisler, sürücüler, WMI, tarayıcı",
-      "Fidye kalkanı: tuzak dosyalar, şifreleme izleme, yedek kasası",
-      "DNS filtresi, taklit banka/e-Devlet uyarısı, bağlantı izleyici",
-      "Güvenlik puanı, program güncelleme, şifre sızıntı kontrolü",
-      "Claude: Bu dosya ne?, dolandırıcılık kontrolü, asistan"
-    ],
-    "icon": "icons/kalkan.png",
-    "size": 31604584,
-    "sha256": "9513291eae5239bdc5de7f9fafd24e8814f111514fd3d36706d0a400184faca8",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/kalkan-v1.0.0/Kalkan-1.0.0.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=kalkan"
-  },
-  {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
     "version": "1.0.2",
@@ -92,5 +70,27 @@
     "sha256": "ffde5d69eb0291cefa86c92d39d75069de18446cb8969efeefb22b2f8ba37b69",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.2/PDF-Studyo-1.0.2.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
+  },
+  {
+    "id": "kalkan",
+    "name": "Kalkan",
+    "version": "1.0.1",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-06",
+    "description": "Defender'ın üstüne katman ekleyen Türkçe güvenlik uygulaması: çoklu tarama motoru, derin tarama, fidye yazılımı kalkanı, DNS filtresi ve sıkılaştırma. İstersen Claude dosyaları ve şüpheli mesajları açıklar (kendi API anahtarınla).",
+    "features": [
+      "Defender + ClamAV + YARA + MalwareBazaar + VirusTotal",
+      "Derin tarama: başlangıç, görevler, servisler, sürücüler, WMI, tarayıcı",
+      "Fidye kalkanı: tuzak dosyalar, şifreleme izleme, yedek kasası",
+      "DNS filtresi, taklit banka/e-Devlet uyarısı, bağlantı izleyici",
+      "Güvenlik puanı, program güncelleme, şifre sızıntı kontrolü",
+      "Claude: Bu dosya ne?, dolandırıcılık kontrolü, asistan"
+    ],
+    "icon": "icons/kalkan.png",
+    "size": 31603917,
+    "sha256": "98eff4ecfe23dd5ae90a186bacd6283880468a4bb9220042e87a63a54b82e888",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/kalkan-v1.0.1/Kalkan-1.0.1.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=kalkan"
   }
 ]
