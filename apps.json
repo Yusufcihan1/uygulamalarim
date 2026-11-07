@@ -94,5 +94,27 @@
     "sha256": "79ee2061c4633bfc734f8104d9925a73a3d66b622ec09974159196c1fe218c2a",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pc-turbo-v1.0.4/PC-Turbo-1.0.4.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
+  },
+  {
+    "id": "dock",
+    "name": "Dock",
+    "version": "1.1.0",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-07",
+    "description": "Windows için macOS tarzı, büyüyen simgeli uygulama dock'u",
+    "features": [
+      "Uygulama, kısayol, klasör ve dosyaları sürükleyip bırakarak ekleme",
+      "Fareyle büyüyen keskin simgeler",
+      "Yatay ya da dikey yön, yedi tema ve özel renk",
+      "Dock'u bölümlere ayırma (çizgi ya da ayrı kutular)",
+      "Aynı anda birden fazla dock",
+      "Windows ile başlatma"
+    ],
+    "icon": "icons/dock.png",
+    "size": 33528493,
+    "sha256": "db817ae8e6c6aa7be6de38ec32728d7106e8e069e8f8d7aeccc3b2099cb18141",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.0/Dock-1.1.0.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=dock"
   }
 ]
