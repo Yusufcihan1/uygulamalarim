@@ -98,7 +98,7 @@
   {
     "id": "dock",
     "name": "Dock",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-07",
@@ -109,12 +109,13 @@
       "Yatay ya da dikey yön, yedi tema ve özel renk",
       "Dock'u bölümlere ayırma (çizgi ya da ayrı kutular)",
       "Aynı anda birden fazla dock",
-      "Windows ile başlatma"
+      "Windows ile başlatma",
+      "Otomatik güncelleme"
     ],
     "icon": "icons/dock.png",
-    "size": 33528493,
-    "sha256": "db817ae8e6c6aa7be6de38ec32728d7106e8e069e8f8d7aeccc3b2099cb18141",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.0/Dock-1.1.0.exe",
+    "size": 33535582,
+    "sha256": "0280d26612455cec39aa429dc3d1b78334b89d6883cd1587b8b71c933fd1e11d",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.1/Dock-1.1.1.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=dock"
   }
 ]
