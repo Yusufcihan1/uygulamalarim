@@ -73,29 +73,6 @@
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pc-turbo"
   },
   {
-    "id": "dock",
-    "name": "Dock",
-    "version": "1.1.1",
-    "platform": "Windows",
-    "kind": "installer",
-    "date": "2026-11-07",
-    "description": "Windows için macOS tarzı, büyüyen simgeli uygulama dock'u",
-    "features": [
-      "Uygulama, kısayol, klasör ve dosyaları sürükleyip bırakarak ekleme",
-      "Fareyle büyüyen keskin simgeler",
-      "Yatay ya da dikey yön, yedi tema ve özel renk",
-      "Dock'u bölümlere ayırma (çizgi ya da ayrı kutular)",
-      "Aynı anda birden fazla dock",
-      "Windows ile başlatma",
-      "Otomatik güncelleme"
-    ],
-    "icon": "icons/dock.png",
-    "size": 33535582,
-    "sha256": "0280d26612455cec39aa429dc3d1b78334b89d6883cd1587b8b71c933fd1e11d",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.1/Dock-1.1.1.exe",
-    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=dock"
-  },
-  {
     "id": "pdf-studyo",
     "name": "PDF Stüdyo",
     "version": "1.0.6",
@@ -119,5 +96,29 @@
     "sha256": "c875f78aef29b11d57abe89ad98d9afb2e439b76ff877d00623839ae4ba68464",
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/pdf-studyo-v1.0.6/PDF-Studyo-1.0.6.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=pdf-studyo"
+  },
+  {
+    "id": "dock",
+    "name": "Dock",
+    "version": "1.1.2",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-07",
+    "description": "Windows için macOS tarzı, büyüyen simgeli uygulama dock'u",
+    "features": [
+      "Uygulama, kısayol, klasör ve dosyaları sürükleyip bırakarak ekleme",
+      "Fareyle büyüyen keskin simgeler",
+      "Yatay ya da dikey yön, yedi tema ve özel renk",
+      "Dock'u bölümlere ayırma (çizgi ya da ayrı kutular)",
+      "Aynı anda birden fazla dock",
+      "Pencerelerin arkasında, masaüstünde durabilme",
+      "Windows ile başlatma",
+      "Otomatik güncelleme"
+    ],
+    "icon": "icons/dock.png",
+    "size": 33550181,
+    "sha256": "2ce0b31020958a6524e2a50c762b79d56d609c06eab6b0295f5866d2993e99ee",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.2/Dock-1.1.2.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=dock"
   }
 ]
