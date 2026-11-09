@@ -100,10 +100,10 @@
   {
     "id": "dock",
     "name": "Dock",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "platform": "Windows",
     "kind": "installer",
-    "date": "2026-11-07",
+    "date": "2026-11-09",
     "description": "Windows için macOS tarzı, büyüyen simgeli uygulama dock'u",
     "features": [
       "Uygulama, kısayol, klasör ve dosyaları sürükleyip bırakarak ekleme",
@@ -116,9 +116,9 @@
       "Otomatik güncelleme"
     ],
     "icon": "icons/dock.png",
-    "size": 33550181,
-    "sha256": "2ce0b31020958a6524e2a50c762b79d56d609c06eab6b0295f5866d2993e99ee",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.2/Dock-1.1.2.exe",
+    "size": 33548557,
+    "sha256": "47c9f6094d83c1bd99a5796f8e9ff65103cf38ec21d29b60fcc613c963aec409",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/dock-v1.1.3/Dock-1.1.3.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=dock"
   }
 ]
