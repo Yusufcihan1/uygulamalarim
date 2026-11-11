@@ -241,6 +241,7 @@ const KINDS = {
   exe: ["Taşınabilir", "Kurulum gerekmez, doğrudan çalıştır."],
 };
 const kindOf = (a) => KINDS[a.kind] || KINDS.installer;
+const isGame = (a) => a.category === "game";
 const isPortable = (a) => a.kind && a.kind !== "installer";
 
 // Simgeler: Astryx'te görsel bileşeni yok (AspectRatio şablonlarındaki gibi düz <img>, tema köşe yarıçapıyla).
@@ -275,7 +276,7 @@ async function loadReleases() {
 const downloadsOf = (releases, id) => Array.isArray(releases) ? releases.filter((r) => r.id === id).reduce((s, r) => s + r.n, 0) : 0;
 const dlText = (releases, id) => releases == null ? "…" : fmtNum(downloadsOf(releases, id));
 
-// ---------- yönlendirme: #/, #/uygulamalar, #/uygulama/<id>, #/kurulum, #/surumler ----------
+// ---------- yönlendirme: #/, #/uygulamalar, #/oyunlar, #/uygulama/<id>, #/kurulum, #/surumler ----------
 const readPath = () => decodeURIComponent(location.hash.replace(/^#\/?/, ""));
 function useRoute() {
   const [path, setPath] = useState(readPath);
@@ -292,7 +293,7 @@ function useRoute() {
     return () => window.removeEventListener("hashchange", on);
   }, []);
   if (path.startsWith("uygulama/")) return { view: "app", id: path.slice(9) };
-  return { view: { uygulamalar: "apps", kurulum: "guide", surumler: "releases" }[path] || "home" };
+  return { view: { uygulamalar: "apps", oyunlar: "games", kurulum: "guide", surumler: "releases" }[path] || "home" };
 }
 
 // ---------- açık / koyu tema ----------
@@ -1002,7 +1003,8 @@ function AppCard({ app, releases }) {
   <//></div>`;
 }
 
-function Apps({ apps, releases }) {
+function Apps({ apps: all, releases, games = false }) {
+  const apps = all.filter((a) => isGame(a) === games);
   // Düğme hemen değişir; liste önce kısaca söner, sonra yeni kartlar sırayla belirir.
   // Kapsayıcının yüksekliği eski değerden yeniye yumuşakça geçer, böylece alttaki içerik zıplamaz.
   const [kind, setKind] = useState("all"), [sort, setSort] = useState("new");
@@ -1026,7 +1028,7 @@ function Apps({ apps, releases }) {
   if (shown.sort === "popular") list = [...list].sort((a, b) => downloadsOf(releases, b.id) - downloadsOf(releases, a.id));
 
   return html`<${VStack} gap=${8}>
-    <${PageHead} title="Uygulamalar" end=${html`
+    <${PageHead} title=${games ? "Oyunlar" : "Uygulamalar"} end=${html`
       <${SegmentedControl} label="Türe göre" value=${kind} onChange=${change("kind", setKind)}>
         <${SegmentedControlItem} value="all" label="Tümü" />
         <${SegmentedControlItem} value="installer" label="Kurulum" icon=${html`<${Ico} icon=${Package} />`} />
@@ -1036,11 +1038,11 @@ function Apps({ apps, releases }) {
         <${SegmentedControlItem} value="new" label="En yeni" />
         <${SegmentedControlItem} value="popular" label="En çok indirilen" />
       <//>`}>
-      ${apps.length} uygulama · hepsi ücretsiz, hepsi Windows için.
+      ${apps.length} ${games ? "oyun" : "uygulama"} · hepsi ücretsiz, hepsi Windows için.
     <//>
     ${list.length
       ? html`<div class="stagger" ref=${box}><${Grid} columns=${{ minWidth: 320, repeat: "fit" }} gap=${5}>${list.map((a) => html`<${AppCard} key=${a.id} app=${a} releases=${releases} />`)}<//></div>`
-      : html`<${EmptyState} title="Bu türde uygulama yok" description="Başka bir tür seç." icon=${html`<${Ico} icon=${Package} size="lg" />`} />`}
+      : html`<${EmptyState} title=${games ? (apps.length ? "Bu türde oyun yok" : "Henüz oyun yok") : "Bu türde uygulama yok"} description=${games && !apps.length ? "Yakında burada olacak." : "Başka bir tür seç."} icon=${html`<${Ico} icon=${Package} size="lg" />`} />`}
   <//>`;
 }
 
@@ -1067,7 +1069,7 @@ function AppPage({ apps, releases, id }) {
   const file = a.download.split("/").pop();
 
   return html`<${VStack} gap=${6}>
-    <${HStack}><${Button} label="Tüm uygulamalar" variant="ghost" href="#/uygulamalar" icon=${html`<${Ico} icon=${ArrowLeft} />`} /><//>
+    <${HStack}><${Button} label=${isGame(a) ? "Tüm oyunlar" : "Tüm uygulamalar"} variant="ghost" href=${isGame(a) ? "#/oyunlar" : "#/uygulamalar"} icon=${html`<${Ico} icon=${ArrowLeft} />`} /><//>
     <${Grid} columns=${{ minWidth: 340, repeat: "fit" }} gap=${8} align="start">
       <div class="rise"><${Card} variant="muted" padding=${0}>
         <${AspectRatio} ratio=${1}>
@@ -1278,15 +1280,17 @@ function App() {
   useEffect(() => {
     if (route.view === "home") document.title = "Uygulamalarım";
     if (route.view === "apps") document.title = "Uygulamalar · Uygulamalarım";
+    if (route.view === "games") document.title = "Oyunlar · Uygulamalarım";
   }, [route.view]);
 
-  const nav = route.view === "app" ? "apps" : route.view;
+  const nav = route.view === "app" ? ((apps || []).some((x) => x.id === route.id && isGame(x)) ? "games" : "apps") : route.view;
   useNavPill([nav, theme]);
   const topNav = html`<${TopNav} label="Ana menü"
     heading=${html`<${TopNavHeading} heading="Uygulamalarım" headingHref="#/"
       logo=${html`<${NavIcon} icon=${html`<${Ico} icon=${LayoutGrid} />`} />`} />`}
     centerContent=${html`
       <${TopNavItem} label="Uygulamalar" href="#/uygulamalar" isSelected=${nav === "apps"} />
+      <${TopNavItem} label="Oyunlar" href="#/oyunlar" isSelected=${nav === "games"} />
       <${TopNavItem} label="Kurulum" href="#/kurulum" isSelected=${nav === "guide"} />
       <${TopNavItem} label="Sürümler" href="#/surumler" isSelected=${nav === "releases"} />`}
     endContent=${html`
@@ -1307,7 +1311,8 @@ function App() {
   } else {
     page = {
       home: html`<${Home} apps=${apps} releases=${releases} />`,
-      apps: html`<${Apps} apps=${apps} releases=${releases} />`,
+      apps: html`<${Apps} key="apps" apps=${apps} releases=${releases} />`,
+      games: html`<${Apps} key="games" apps=${apps} releases=${releases} games=${true} />`,
       app: html`<${AppPage} apps=${apps} releases=${releases} id=${route.id} />`,
       guide: html`<${Guide} />`,
       releases: html`<${Releases} apps=${apps} releases=${releases} />`,

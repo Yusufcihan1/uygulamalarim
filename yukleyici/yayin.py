@@ -256,8 +256,9 @@ def next_version(version):
     return ".".join(map(str, parts))
 
 
-def publish(pkg, app_id, name, version, description, features, icon, log=print):
-    """Paketi yükler ve siteyi günceller. Dönüş: indirme bağlantısı."""
+def publish(pkg, app_id, name, version, description, features, icon, log=print, category=None):
+    """Paketi yükler ve siteyi günceller. Dönüş: indirme bağlantısı.
+    category: "game" sitede Oyunlar bölümüne koyar; None ise önceki kayıttaki değer korunur."""
     log("Depo güncelleniyor…")
     ensure_repo()
     tag = f"{app_id}-v{version}"
@@ -298,6 +299,8 @@ def publish(pkg, app_id, name, version, description, features, icon, log=print):
     ensure_repo()  # yükleme uzun sürebilir; bu arada başka bir yayın olmuş olabilir
     os.makedirs(os.path.join(WORK, "icons"), exist_ok=True)
     icon.save(os.path.join(WORK, "icons", f"{app_id}.png"))
+    onceki = next((a for a in load_apps() if a.get("id") == app_id), {})
+    category = category or onceki.get("category")
     apps = [a for a in load_apps() if a.get("id") != app_id]
     download = f"https://github.com/{REPO}/releases/download/{tag}/{os.path.basename(asset)}"
     apps.append({
@@ -315,6 +318,8 @@ def publish(pkg, app_id, name, version, description, features, icon, log=print):
         "download": download,
         "release": f"https://github.com/{REPO}/releases?q={app_id}",
     })
+    if category:
+        apps[-1]["category"] = category
     with open(os.path.join(WORK, "apps.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(apps, f, ensure_ascii=False, indent=2)
         f.write("\n")
