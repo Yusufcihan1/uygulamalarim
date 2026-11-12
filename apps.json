@@ -124,22 +124,24 @@
   {
     "id": "90-lite",
     "name": "90+ Lite",
-    "version": "1.4.6",
+    "version": "1.4.7",
     "platform": "Windows",
     "kind": "installer",
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "description": "Klasik futbol oyunu: tek başına ya da arkadaşlarınla online oyna. Oyun her açılışta yeni sürümü denetler.",
     "features": [
       "11e 11 klasik futbol, klavye ya da oyun koluyla",
       "Arkadaşlarınla online maç (iki tarafta da aynı sürüm gerekir)",
       "Gerçek oyuncu kayıtlarından çevrilen 509 hareket",
+      "Yeni: uzatma dakikaları, kaleci kurtarış animasyonları, R3 ile 10 yetenek hareketi",
+      "Maç içinde kamera ve tuş ataması (duraklat menüsünden)",
       "Açılışta güncelleme denetimi: şimdi güncelle, sonra ya da bu sürümü atla",
       "Yönetici izni istemeden kurulur; ayarların güncellemede korunur"
     ],
     "icon": "icons/90-lite.png",
-    "size": 232380521,
-    "sha256": "7c448fdaff69b2f731a734bf45a96a36205e6fb1ef89ce77aa069e3ea6795512",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.4.6/90-Lite-1.4.6.exe",
+    "size": 232316847,
+    "sha256": "a26d0f01ad9f0de1fe71c52b72fda57e4a192ec599447420bc74ad020601c1e2",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.4.7/90-Lite-1.4.7.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=90-lite",
     "category": "game"
   }
