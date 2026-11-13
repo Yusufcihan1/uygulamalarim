@@ -124,7 +124,7 @@
   {
     "id": "90-lite",
     "name": "90+ Lite",
-    "version": "1.4.9",
+    "version": "1.5.0",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-13",
@@ -133,8 +133,10 @@
       "11e 11 klasik futbol, klavye ya da oyun koluyla",
       "Arkadaşlarınla online maç (iki tarafta da aynı sürüm gerekir)",
       "Gerçek oyuncu kayıtlarından çevrilen 509 hareket",
-      "Yeni: maç önü töreni (kuş bakışı stadyum, tünelden çıkış, marşlar, kadro ekranı)",
-      "Yeni: faul ve penaltıda tekrar, ofsaytta VAR görüntüsü",
+      "Yeni: gerçekçi oyuncu modelleri, yeni ışık, gökyüzü ve gölgeler",
+      "Yeni: ULTRA grafik seviyesi, üç yayın kamerası ve sinematik çekimler",
+      "Yeni: maça giriş hızlandı; ofsayt çizgisi ve menüde süren spiker sesi düzeltildi",
+      "Maç önü töreni, faul ve penaltıda tekrar, ofsaytta VAR görüntüsü",
       "Oyuncu adlarıyla konuşan spiker ve takım tezahüratları söyleyen taraftar",
       "Uzatma dakikaları, kaleci kurtarış animasyonları, R3 ile 10 yetenek hareketi",
       "Maç içinde kamera ve tuş ataması (duraklat menüsünden)",
@@ -142,9 +144,9 @@
       "Yönetici izni istemeden kurulur; ayarların güncellemede korunur"
     ],
     "icon": "icons/90-lite.png",
-    "size": 282090528,
-    "sha256": "9e4de4346cedfd3c2db5eb2ad0d8f90e5718f6d38caa4a27eef6f1480ba4f8a8",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.4.9/90-Lite-1.4.9.exe",
+    "size": 409024157,
+    "sha256": "4e3e8c16b7367b32f3e9483d6dd974fc4b96d8e642aa93bfa41010993a45181e",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.5.0/90-Lite-1.5.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=90-lite",
     "category": "game"
   }
