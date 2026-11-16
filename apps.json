@@ -124,16 +124,18 @@
   {
     "id": "90-lite",
     "name": "90+ Lite",
-    "version": "1.5.1",
+    "version": "1.6.0",
     "platform": "Windows",
     "kind": "installer",
-    "date": "2026-11-14",
+    "date": "2026-11-16",
     "description": "Klasik futbol oyunu: tek başına ya da arkadaşlarınla online oyna. Oyun her açılışta yeni sürümü denetler.",
     "features": [
       "11e 11 klasik futbol, klavye ya da oyun koluyla",
+      "Yeni: online turnuva, 4 oyuncu çift devreli lig; fikstür, maç saatleri ve puan durumu",
+      "Turnuva maçları sunucu üzerinden: Tailscale paylaşımıyla katılım, port açmak gerekmez",
+      "Yeni takım grubu ŞAMPİYONLAR: 2026-27 Şampiyonlar Ligi takımları",
       "Arkadaşlarınla online maç (iki tarafta da aynı sürüm gerekir)",
       "Gerçek oyuncu kayıtlarından çevrilen 509 hareket",
-      "Yeni: R3 topu ileri sektirir; çubuk yana çalım, geriye gökkuşağı",
       "Gerçekçi oyuncu modelleri, yeni ışık, gökyüzü ve gölgeler",
       "ULTRA grafik seviyesi, üç yayın kamerası ve sinematik çekimler",
       "Maça giriş hızlandı; ofsayt çizgisi ve menüde süren spiker sesi düzeltildi",
@@ -145,9 +147,9 @@
       "Yönetici izni istemeden kurulur; ayarların güncellemede korunur"
     ],
     "icon": "icons/90-lite.png",
-    "size": 409097557,
-    "sha256": "bf5d4f5a83796fcbc6493a9c18f999ea27269afda6fbc88a791a56ee53a037ad",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.5.1/90-Lite-1.5.1.exe",
+    "size": 360237196,
+    "sha256": "8263c2e3dccf93cbd473b73e58de745b280ad3de6762fafd6bab58b97be43d80",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.6.0/90-Lite-1.6.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=90-lite",
     "category": "game"
   }
