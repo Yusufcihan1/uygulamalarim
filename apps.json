@@ -152,5 +152,25 @@
     "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/90-lite-v1.6.0/90-Lite-1.6.0.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=90-lite",
     "category": "game"
+  },
+  {
+    "id": "mihenk",
+    "name": "Mihenk",
+    "version": "0.1.0",
+    "platform": "Windows",
+    "kind": "installer",
+    "date": "2026-11-23",
+    "description": "MT5 verisiyle grafik, Pine Script ve manuel backtest uygulaması",
+    "features": [
+      "MT5'ten otomatik veri ve canlı akış",
+      "Pine Script indikatör ve stratejiler",
+      "Bar Replay ile manuel backtest ve istatistik",
+      "Claude ile analiz (kendi API anahtarınla)"
+    ],
+    "icon": "icons/mihenk.png",
+    "size": 250501280,
+    "sha256": "93fea74122560458df70a55269410658f632d3ed9bfa94c89de4a21813392d35",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/mihenk-v0.1.0/Mihenk-0.1.0.exe",
+    "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=mihenk"
   }
 ]
