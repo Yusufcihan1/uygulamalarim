@@ -156,10 +156,10 @@
   {
     "id": "mihenk",
     "name": "Mihenk",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "platform": "Windows",
     "kind": "installer",
-    "date": "2026-11-23",
+    "date": "2026-11-24",
     "description": "MT5 verisiyle grafik, Pine Script ve manuel backtest uygulaması",
     "features": [
       "MT5'ten otomatik veri ve canlı akış",
@@ -168,9 +168,9 @@
       "Claude ile analiz (kendi API anahtarınla)"
     ],
     "icon": "icons/mihenk.png",
-    "size": 250501280,
-    "sha256": "93fea74122560458df70a55269410658f632d3ed9bfa94c89de4a21813392d35",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/mihenk-v0.1.0/Mihenk-0.1.0.exe",
+    "size": 250511862,
+    "sha256": "299f638a998223fb7efcd2352b5b4d049bce6297f673b3fcfd9b63ae64f64ab4",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/mihenk-v0.1.1/Mihenk-0.1.1.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=mihenk"
   }
 ]
