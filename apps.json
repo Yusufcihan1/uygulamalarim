@@ -156,7 +156,7 @@
   {
     "id": "mihenk",
     "name": "Mihenk",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "platform": "Windows",
     "kind": "installer",
     "date": "2026-11-24",
@@ -168,9 +168,9 @@
       "Claude ile analiz (kendi API anahtarınla)"
     ],
     "icon": "icons/mihenk.png",
-    "size": 250511862,
-    "sha256": "299f638a998223fb7efcd2352b5b4d049bce6297f673b3fcfd9b63ae64f64ab4",
-    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/mihenk-v0.1.1/Mihenk-0.1.1.exe",
+    "size": 250497630,
+    "sha256": "b73d73893e71e24721fdacbec556aa14e3acde1b07a1acb59bab0a181f8da8c4",
+    "download": "https://github.com/Yusufcihan1/uygulamalarim/releases/download/mihenk-v0.1.2/Mihenk-0.1.2.exe",
     "release": "https://github.com/Yusufcihan1/uygulamalarim/releases?q=mihenk"
   }
 ]
